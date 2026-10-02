@@ -1,1 +1,364 @@
-aW1wb3J0IHsKICBXSU5EWV9BUElfQkFTRSwKICBXSU5EWV9JTUFHRV9DQUNIRV9NUywKICBXSU5EWV9GRVRDSF9USU1FT1VUX01TLAogIFdJTkRZX0NPTlRJTkVOVFMsCiAgREVGQVVMVF9XSU5EWV9NQVhfU09VUkNFUywKICBERUZBVUxUX1dJTkRZX1BBR0VTX1BFUl9DT05USU5FTlQsCn0gZnJvbSAnLi9jb25zdGFudHMuanMnOwppbXBvcnQgewogIGZhbGxiYWNrSGVhZGluZ0Zyb21JZCwKICB0b0Zpbml0ZU51bWJlciwKICBpc1BsYXVzaWJsZUxhdExvbiwKfSBmcm9tICcuL25vcm1hbGl6ZS5qcyc7CmltcG9ydCB7IGZldGNoQ2N0dkltYWdlRnJvbVVwc3RyZWFtIH0gZnJvbSAnLi9tZWRpYS5qcyc7CgovKioKICogV2luZHkgV2ViY2FtcyBBUEkgdjMgcGFjayAoaHR0cHM6Ly9hcGkud2luZHkuY29tL3dlYmNhbXMvZG9jcykuCiAqCiAqIFRoZSB3b3JsZCdzIGxhcmdlc3QgcHVibGljIHdlYmNhbSBkaXJlY3RvcnkgKH42OGsgY2FtZXJhcykuIEF1dGggaXMgdGhlCiAqIGB4LXdpbmR5LWFwaS1rZXlgIGhlYWRlcjsgdGhlIGtleSBjb21lcyBmcm9tIHRoZSBXSU5EWV9BUElfS0VZIGVudiB2YXIgYW5kCiAqIGlzIG5ldmVyIHdyaXR0ZW4gYW55d2hlcmUuIEZyZWUtdGllciBpbWFnZSBVUkxzIGNhcnJ5IGEgdG9rZW4gdGhhdCBleHBpcmVzCiAqIGFmdGVyIDEwIG1pbnV0ZXMsIHNvIGZyYW1lIHNlcnZpbmcga2VlcHMgYSBwZXItY2FtZXJhIFVSTCBjYWNoZQogKiAoV0lORFlfSU1BR0VfQ0FDSEVfTVMsIDggbWluKSBhbmQgcmVmcmVzaGVzIHZpYSB0aGUgZGV0YWlsIGVuZHBvaW50IG9uCiAqIGV4cGlyeS80MDEuIFBsYXllciBVUkxzIGFyZSBXaW5keSBpZnJhbWUgZW1iZWRzIChub3QgSExTKSwgc28gZXZlcnkgV2luZHkKICogY2FtZXJhIGlzIGFuICdpbWFnZScgZmVlZCBvbiB0aGUgZXhpc3RpbmcgMi41cyByZWZyZXNoIGNhZGVuY2U7IHRoZSBlbWJlZAogKiBVUkwgcmlkZXMgYWxvbmcgYXMgYHBsYXllclVybGAgZm9yIGZ1dHVyZSBwYW5lbCB1c2UuCiAqLwoKLyoqIFRyaW1tZWQgQVBJIGtleSwgb3IgJycgd2hlbiB1bnNldC4gKi8KZnVuY3Rpb24gd2luZHlBcGlLZXkoKSB7CiAgcmV0dXJuIFN0cmluZyhwcm9jZXNzLmVudi5XSU5EWV9BUElfS0VZIHx8ICcnKS50cmltKCk7Cn0KCi8qKiBUcnVlIHdoZW4gdGhlIHBhY2sgY2FuIHRhbGsgdG8gV2luZHkgYXQgYWxsLiAqLwpleHBvcnQgZnVuY3Rpb24gd2luZHlBcGlDb25maWd1cmVkKCkgewogIHJldHVybiB3aW5keUFwaUtleSgpLmxlbmd0aCA+IDA7Cn0KCi8qKgogKiBHRVQgb25lIFdpbmR5IHYzIHBhdGggd2l0aCB0aGUgQVBJIGtleSBoZWFkZXIuIFJldHVybnMgcGFyc2VkIEpTT04sIG9yCiAqIG51bGwgb24gYXV0aCBmYWlsdXJlIC8gcmF0ZSBsaW1pdCAvIHRyYW5zcG9ydCBlcnJvciAoZWFjaCBsb2dnZWQgb25jZSBwZXIKICogY2FsbCBzaXRlIGNvbnRleHQpLgogKgogKiBAcGFyYW0ge3N0cmluZ30gcGF0aCAtIFBhdGggKyBxdWVyeSwgZS5nLiAiL3dlYmNhbXM/bGltaXQ9NTAiLgogKiBAcGFyYW0ge3N0cmluZ30gY29udGV4dCAtIExvZyBsYWJlbCBmb3IgZmFpbHVyZXMuCiAqIEByZXR1cm5zIHtQcm9taXNlPG9iamVjdHxudWxsPn0KICovCmFzeW5jIGZ1bmN0aW9uIHdpbmR5R2V0KHBhdGgsIGNvbnRleHQpIHsKICBjb25zdCBrZXkgPSB3aW5keUFwaUtleSgpOwogIGlmICgha2V5KSByZXR1cm4gbnVsbDsKICBsZXQgcmVzcDsKICB0cnkgewogICAgcmVzcCA9IGF3YWl0IGZldGNoKGAke1dJTkRZX0FQSV9CQVNFfSR7cGF0aH1gLCB7CiAgICAgIGhlYWRlcnM6IHsKICAgICAgICBBY2NlcHQ6ICdhcHBsaWNhdGlvbi9qc29uJywKICAgICAgICAneC13aW5keS1hcGkta2V5Jzoga2V5LAogICAgICAgICdVc2VyLUFnZW50JzogJ2dvZHMtZXllLXZpZXctY2N0di1wcm94eS8xLjAnLAogICAgICB9LAogICAgICBzaWduYWw6IEFib3J0U2lnbmFsLnRpbWVvdXQoV0lORFlfRkVUQ0hfVElNRU9VVF9NUyksCiAgICB9KTsKICB9IGNhdGNoIChlcnJvcikgewogICAgY29uc29sZS53YXJuKAogICAgICAnW0NDVFZdIFdpbmR5IEFQSSByZXF1ZXN0IGZhaWxlZDonLAogICAgICBjb250ZXh0LAogICAgICBlcnJvcj8ubWVzc2FnZSB8fCBlcnJvciwKICAgICk7CiAgICByZXR1cm4gbnVsbDsKICB9CiAgaWYgKHJlc3Auc3RhdHVzID09PSA0MDEgfHwgcmVzcC5zdGF0dXMgPT09IDQwMykgewogICAgY29uc29sZS53YXJuKAogICAgICAnW0NDVFZdIFdpbmR5IEFQSSBhdXRoIGZhaWxlZCAoSFRUUCAlcykgZHVyaW5nICVzOyBjaGVjayBXSU5EWV9BUElfS0VZJywKICAgICAgcmVzcC5zdGF0dXMsCiAgICAgIGNvbnRleHQsCiAgICApOwogICAgcmV0dXJuIG51bGw7CiAgfQogIGlmIChyZXNwLnN0YXR1cyA9PT0gNDI5KSB7CiAgICBjb25zb2xlLndhcm4oJ1tDQ1RWXSBXaW5keSBBUEkgcmF0ZSBsaW1pdGVkIGR1cmluZycsIGNvbnRleHQpOwogICAgcmV0dXJuIG51bGw7CiAgfQogIGlmICghcmVzcC5vaykgewogICAgY29uc29sZS53YXJuKCdbQ0NUVl0gV2luZHkgQVBJIEhUVFAgJXMgZHVyaW5nICVzJywgcmVzcC5zdGF0dXMsIGNvbnRleHQpOwogICAgcmV0dXJuIG51bGw7CiAgfQogIHRyeSB7CiAgICByZXR1cm4gYXdhaXQgcmVzcC5qc29uKCk7CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIGNvbnNvbGUud2FybigKICAgICAgJ1tDQ1RWXSBXaW5keSBBUEkgYmFkIEpTT04gZHVyaW5nJywKICAgICAgY29udGV4dCwKICAgICAgZXJyb3I/Lm1lc3NhZ2UgfHwgZXJyb3IsCiAgICApOwogICAgcmV0dXJuIG51bGw7CiAgfQp9CgovKiogRXh0cmFjdCB0aGUgY3VycmVudCBzbmFwc2hvdCBVUkwgZnJvbSBhIHdlYmNhbSByZWNvcmQgKGFueSBzaGFwZSkuICovCmZ1bmN0aW9uIGV4dHJhY3RXaW5keUltYWdlVXJsKHdlYmNhbSkgewogIGNvbnN0IGltYWdlcyA9IHdlYmNhbT8uaW1hZ2VzIHx8IHt9OwogIGNvbnN0IGN1cnJlbnQgPSBpbWFnZXMuY3VycmVudCB8fCBpbWFnZXMucHJldmlldyB8fCB7fTsKICBjb25zdCB1cmwgPSBTdHJpbmcoCiAgICBjdXJyZW50LnVybCB8fCBjdXJyZW50LnByZXZpZXdVcmwgfHwgaW1hZ2VzLnVybCB8fCAnJywKICApLnRyaW0oKTsKICByZXR1cm4gdXJsOwp9CgovKiogRXh0cmFjdCB0aGUgbGl2ZSBwbGF5ZXIgZW1iZWQgVVJMLCBpZiB0aGUgd2ViY2FtIHB1Ymxpc2hlcyBvbmUuICovCmZ1bmN0aW9uIGV4dHJhY3RXaW5keVBsYXllclVybCh3ZWJjYW0pIHsKICBjb25zdCBwbGF5ZXIgPSB3ZWJjYW0/LnBsYXllciB8fCB7fTsKICByZXR1cm4gU3RyaW5nKHBsYXllci5saXZlIHx8IHBsYXllci5lbWJlZCB8fCAnJykudHJpbSgpOwp9CgovKiogRXh0cmFjdCBub3JtYWxpemVkIGxvY2F0aW9uIGZpZWxkcyBmcm9tIGEgd2ViY2FtIHJlY29yZC4gKi8KZnVuY3Rpb24gZXh0cmFjdFdpbmR5TG9jYXRpb24od2ViY2FtKSB7CiAgY29uc3QgbG9jID0gd2ViY2FtPy5sb2NhdGlvbiB8fCB7fTsKICByZXR1cm4gewogICAgbGF0OiB0b0Zpbml0ZU51bWJlcihsb2MubGF0aXR1ZGUgPz8gbG9jLmxhdCksCiAgICBsb246IHRvRmluaXRlTnVtYmVyKGxvYy5sb25naXR1ZGUgPz8gbG9jLmxvbiksCiAgICBjaXR5OiBTdHJpbmcobG9jLmNpdHkgfHwgJycpLnRyaW0oKSwKICAgIGNvdW50cnk6IFN0cmluZyhsb2MuY291bnRyeSB8fCAnJykudHJpbSgpLAogICAgY291bnRyeUNvZGU6IFN0cmluZyhsb2MuY291bnRyeUNvZGUgfHwgbG9jLmNvdW50cnlfY29kZSB8fCAnJykKICAgICAgLnRyaW0oKQogICAgICAudG9VcHBlckNhc2UoKSwKICB9Owp9CgovKioKICogT25seSBXaW5keS1zZXJ2ZWQgaW1hZ2UgaG9zdHMgYXJlIGFjY2VwdGVkIGZvciBmcmFtZSBVUkxzLiBUaGUgQVBJIHNlcnZlcwogKiBldmVyeSB3ZWJjYW0gaW1hZ2UgdGhyb3VnaCBpbWdwcm94eS53aW5keS5jb207IHBpbm5pbmcgdGhlIGhvc3Qga2VlcHMgYQogKiBob3N0aWxlIEFQSSByZXNwb25zZSBmcm9tIHN0ZWVyaW5nIHRoZSBmcmFtZSBwcm94eSBhdCBhbiBhcmJpdHJhcnkgb3JpZ2luCiAqICh0aGUgZnJhbWUgcm91dGUgb3RoZXJ3aXNlIG9ubHkgZmV0Y2hlcyBzZXJ2ZXItcmVnaXN0ZXJlZCBVUkxzKS4KICoKICogQHBhcmFtIHtzdHJpbmd9IHVybAogKiBAcmV0dXJucyB7Ym9vbGVhbn0KICovCmV4cG9ydCBmdW5jdGlvbiBpc1dpbmR5SW1hZ2VVcmwodXJsKSB7CiAgdHJ5IHsKICAgIGNvbnN0IHBhcnNlZCA9IG5ldyBVUkwoU3RyaW5nKHVybCB8fCAnJykudHJpbSgpKTsKICAgIGlmIChwYXJzZWQucHJvdG9jb2wgIT09ICdodHRwczonKSByZXR1cm4gZmFsc2U7CiAgICBjb25zdCBob3N0ID0gcGFyc2VkLmhvc3RuYW1lLnRvTG93ZXJDYXNlKCk7CiAgICByZXR1cm4gaG9zdCA9PT0gJ2ltZ3Byb3h5LndpbmR5LmNvbScgfHwgaG9zdC5lbmRzV2l0aCgnLndpbmR5LmNvbScpOwogIH0gY2F0Y2ggewogICAgcmV0dXJuIGZhbHNlOwogIH0KfQoKLyoqCiAqIE9uZSBXaW5keSB3ZWJjYW0gcmVjb3JkIC0+IG9uZSBub3JtYWxpemVkIENDVFYgc291cmNlLCBvciBudWxsIHdoZW4gdGhlCiAqIHJlY29yZCBpcyB1bnVzYWJsZSAoaW5hY3RpdmUsIG5vIGNvb3Jkcywgbm8gaW1hZ2UpLgogKgogKiBFeHBvcnRlZCBmb3IgdW5pdCB0ZXN0cy4KICoKICogQHBhcmFtIHtvYmplY3R9IHdlYmNhbSAtIFJhdyB3ZWJjYW0gb2JqZWN0IGZyb20gdGhlIHYzIEFQSS4KICogQHJldHVybnMgez9vYmplY3R9CiAqLwpleHBvcnQgZnVuY3Rpb24gd2luZHlXZWJjYW1Ub1NvdXJjZSh3ZWJjYW0pIHsKICBjb25zdCB3ZWJjYW1JZCA9IFN0cmluZyh3ZWJjYW0/LndlYmNhbUlkID8/IHdlYmNhbT8uaWQgPz8gJycpLnRyaW0oKTsKICBpZiAoIXdlYmNhbUlkKSByZXR1cm4gbnVsbDsKICAvLyBUaGUgQVBJIHJldHVybnMgd2ViY2FtcyBvZiBhbGwgc3RhdHVzZXMgdW5sZXNzIGZpbHRlcmVkOyBvbmx5IGxpdmUgb25lcwogIC8vIGJlbG9uZyBvbiB0aGUgZ2xvYmUuCiAgaWYgKFN0cmluZyh3ZWJjYW0/LnN0YXR1cyB8fCAnJykudG9Mb3dlckNhc2UoKSAhPT0gJ2FjdGl2ZScpIHJldHVybiBudWxsOwogIGNvbnN0IGxvYyA9IGV4dHJhY3RXaW5keUxvY2F0aW9uKHdlYmNhbSk7CiAgaWYgKCFpc1BsYXVzaWJsZUxhdExvbihsb2MubGF0LCBsb2MubG9uKSkgcmV0dXJuIG51bGw7CiAgY29uc3QgaW1hZ2VVcmwgPSBleHRyYWN0V2luZHlJbWFnZVVybCh3ZWJjYW0pOwogIGlmICghaXNXaW5keUltYWdlVXJsKGltYWdlVXJsKSkgcmV0dXJuIG51bGw7CgogIGNvbnN0IGNhbWVyYUlkID0gYHdpbmR5LSR7d2ViY2FtSWR9YDsKICBjb25zdCB0aXRsZSA9IFN0cmluZyh3ZWJjYW0/LnRpdGxlIHx8IGBXaW5keSB3ZWJjYW0gJHt3ZWJjYW1JZH1gKS50cmltKCk7CiAgcmV0dXJuIHsKICAgIGlkOiBjYW1lcmFJZCwKICAgIG5hbWU6IHRpdGxlLAogICAgY2l0eTogbG9jLmNpdHkgfHwgbG9jLmNvdW50cnkgfHwgJ1dpbmR5JywKICAgIGNpdHlJZDogbG9jLmNvdW50cnlDb2RlCiAgICAgID8gYHdpbmR5LSR7bG9jLmNvdW50cnlDb2RlLnRvTG93ZXJDYXNlKCl9YAogICAgICA6ICd3aW5keScsCiAgICBwcm92aWRlcjogJ1dpbmR5JywKICAgIGxhdDogbG9jLmxhdCwKICAgIGxvbjogbG9jLmxvbiwKICAgIC8vIE5vIGNvbXBhc3MgaGVhZGluZyBhbnl3aGVyZSBpbiB0aGUgZGF0YXNldCAtPiBpZC1oYXNoIGZhbGxiYWNrLCBsb3cKICAgIC8vIGNvbmZpZGVuY2UgKHNhbWUgcGVyc29uYWxpdHkgYXMgaGVhZGluZ2xlc3MgVGZML0ZpbnRyYWZmaWMgY2FtZXJhcykuCiAgICBoZWFkaW5nRGVnOiBmYWxsYmFja0hlYWRpbmdGcm9tSWQoY2FtZXJhSWQpLAogICAgaGVhZGluZ0NvbmZpZGVuY2U6ICdsb3cnLAogICAgcGl0Y2hEZWc6IC0xOCwKICAgIGZvdkRlZzogNDQsCiAgICByYW5nZU06IDE0NSwKICAgIG1vdW50SGVpZ2h0TTogOCwKICAgIGdyb3VuZEVsZXZhdGlvbk06IDAsIC8vIHByaW9yIG9ubHk7IHRoZSBjbGllbnQncyBncm91bmQgc25hcCBjb3JyZWN0cy4KICAgIGZlZWRUeXBlOiAnaW1hZ2UnLAogICAgdXJsOiBpbWFnZVVybCwKICAgIHNuYXBzaG90VXJsOiBpbWFnZVVybCwKICAgIHNvdXJjZUtpbmQ6ICd3aW5keS13ZWJjYW1zJywKICAgIGxpY2Vuc2U6ICdXaW5keS5jb20gV2ViY2FtcyBBUEknLAogICAgcGxheWVyVXJsOiBleHRyYWN0V2luZHlQbGF5ZXJVcmwod2ViY2FtKSwKICB9Owp9CgovKiogU21hbGwgZGVsYXkgYmV0d2VlbiBwYWdlZCByZXF1ZXN0cyB0byBzdGF5IHBvbGl0ZSBvbiB0aGUgZnJlZSB0aWVyLiAqLwpjb25zdCBzbGVlcCA9IChtcykgPT4gbmV3IFByb21pc2UoKHJlc29sdmUpID0+IHNldFRpbWVvdXQocmVzb2x2ZSwgbXMpKTsKCi8qKgogKiBGZXRjaCBhbmQgbm9ybWFsaXplIFdpbmR5IHdlYmNhbXMsIHNwcmVhZCBhY3Jvc3MgY29udGluZW50cyBmb3IgZ2xvYmFsCiAqIGNvdmVyYWdlLiBFYWNoIGNvbnRpbmVudCBjb250cmlidXRlcyB1cCB0byBpdHMgc2hhcmUgb2YgdGhlIHBhY2sgY2FwLAogKiBwb3B1bGFyaXR5LWZpcnN0LCBzbyB0aGUgZ2xvYmUgZmlsbHMgZXZlbmx5IGluc3RlYWQgb2YgY2x1c3RlcmluZyBvbiB0aGUKICogZGVuc2VzdCByZWdpb24uIEV2ZXJ5IHBhY2sgZmFpbHVyZSBkZWdyYWRlcyB0byBbXSAobG9nZ2VkKSwgbmV2ZXIgdGhyb3dzLgogKgogKiBFbnYga25vYnM6IFdJTkRZX0FQSV9LRVkgKHJlcXVpcmVkKSwgQ0NUVl9XSU5EWV9NQVhfU09VUkNFUyAoZGVmYXVsdCA2MDApLAogKiBDQ1RWX1dJTkRZX1BBR0VTX1BFUl9DT05USU5FTlQgKGRlZmF1bHQgMywgZWFjaCBwYWdlIGlzIGxpbWl0PTUwKS4KICoKICogQHJldHVybnMge1Byb21pc2U8QXJyYXk8b2JqZWN0Pj59IE5vcm1hbGl6ZWQgY2FtZXJhIHNvdXJjZSBvYmplY3RzLgogKi8KZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGxvYWRXaW5keVNvdXJjZXNGcm9tQXBpKCkgewogIGlmICghd2luZHlBcGlDb25maWd1cmVkKCkpIHsKICAgIGNvbnNvbGUud2FybignW0NDVFZdIFdJTkRZX0FQSV9LRVkgbm90IHNldDsgc2tpcHBpbmcgV2luZHkgd2ViY2FtIHBhY2snKTsKICAgIHJldHVybiBbXTsKICB9CiAgY29uc3QgbWF4UmF3ID0gTnVtYmVyKAogICAgcHJvY2Vzcy5lbnYuQ0NUVl9XSU5EWV9NQVhfU09VUkNFUyB8fCBERUZBVUxUX1dJTkRZX01BWF9TT1VSQ0VTLAogICk7CiAgY29uc3QgbWF4Q291bnQgPSBOdW1iZXIuaXNGaW5pdGUobWF4UmF3KQogICAgPyBNYXRoLm1heCg4LCBNYXRoLm1pbigyMDAwLCBNYXRoLmZsb29yKG1heFJhdykpKQogICAgOiBERUZBVUxUX1dJTkRZX01BWF9TT1VSQ0VTOwogIGNvbnN0IHBhZ2VzUmF3ID0gTnVtYmVyKAogICAgcHJvY2Vzcy5lbnYuQ0NUVl9XSU5EWV9QQUdFU19QRVJfQ09OVElORU5UIHx8CiAgICAgIERFRkFVTFRfV0lORFlfUEFHRVNfUEVSX0NPTlRJTkVOVCwKICApOwogIGNvbnN0IHBhZ2VzUGVyQ29udGluZW50ID0gTnVtYmVyLmlzRmluaXRlKHBhZ2VzUmF3KQogICAgPyBNYXRoLm1heCgxLCBNYXRoLm1pbig4LCBNYXRoLmZsb29yKHBhZ2VzUmF3KSkpCiAgICA6IERFRkFVTFRfV0lORFlfUEFHRVNfUEVSX0NPTlRJTkVOVDsKICBjb25zdCBwZXJDb250aW5lbnQgPSBNYXRoLm1heCgKICAgIDgsCiAgICBNYXRoLmNlaWwobWF4Q291bnQgLyBXSU5EWV9DT05USU5FTlRTLmxlbmd0aCksCiAgKTsKCiAgY29uc3QgY2FtZXJhcyA9IFtdOwogIGNvbnN0IHNlZW4gPSBuZXcgU2V0KCk7CiAgZm9yIChjb25zdCBjb250aW5lbnQgb2YgV0lORFlfQ09OVElORU5UUykgewogICAgbGV0IHRha2VuID0gMDsKICAgIGZvciAobGV0IHBhZ2UgPSAwOyBwYWdlIDwgcGFnZXNQZXJDb250aW5lbnQgJiYgdGFrZW4gPCBwZXJDb250aW5lbnQ7IHBhZ2UrKykgewogICAgICBjb25zdCBvZmZzZXQgPSBwYWdlICogNTA7CiAgICAgIC8vIEZyZWUgdGllciBjYXBzIG9mZnNldCBhdCAxMDAwOyB3ZSBuZXZlciBwYWdlIHRoYXQgZGVlcCBhbnl3YXkuCiAgICAgIGlmIChvZmZzZXQgPj0gMTAwMCkgYnJlYWs7CiAgICAgIGNvbnN0IGxpbWl0ID0gTWF0aC5taW4oNTAsIHBlckNvbnRpbmVudCAtIHRha2VuKTsKICAgICAgY29uc3QgcGF0aCA9CiAgICAgICAgYC93ZWJjYW1zP2xpbWl0PSR7bGltaXR9Jm9mZnNldD0ke29mZnNldH1gICsKICAgICAgICBgJmNvbnRpbmVudHM9JHtlbmNvZGVVUklDb21wb25lbnQoY29udGluZW50KX1gICsKICAgICAgICBgJmluY2x1ZGU9JHtlbmNvZGVVUklDb21wb25lbnQoJ2xvY2F0aW9uLGltYWdlcyxwbGF5ZXInKX1gICsKICAgICAgICBgJnNvcnQ9cG9wdWxhcml0eSZzb3J0RGlyZWN0aW9uPWRlc2MmbGFuZz1lbmA7CiAgICAgIGNvbnN0IHBheWxvYWQgPSBhd2FpdCB3aW5keUdldChwYXRoLCBgbGlzdCAke2NvbnRpbmVudH1gKTsKICAgICAgaWYgKCFwYXlsb2FkKSBicmVhazsgLy8gYXV0aC9yYXRlL3RyYW5zcG9ydCBmYWlsdXJlOiBzdG9wIHRoaXMgY29udGluZW50CiAgICAgIGNvbnN0IHJvd3MgPSBBcnJheS5pc0FycmF5KHBheWxvYWQ/LndlYmNhbXMpID8gcGF5bG9hZC53ZWJjYW1zIDogW107CiAgICAgIGlmICghcm93cy5sZW5ndGgpIGJyZWFrOwogICAgICBmb3IgKGNvbnN0IHJvdyBvZiByb3dzKSB7CiAgICAgICAgY29uc3Qgc291cmNlID0gd2luZHlXZWJjYW1Ub1NvdXJjZShyb3cpOwogICAgICAgIGlmICghc291cmNlIHx8IHNlZW4uaGFzKHNvdXJjZS5pZCkpIGNvbnRpbnVlOwogICAgICAgIHNlZW4uYWRkKHNvdXJjZS5pZCk7CiAgICAgICAgY2FtZXJhcy5wdXNoKHNvdXJjZSk7CiAgICAgICAgdGFrZW4gKz0gMTsKICAgICAgICBpZiAodGFrZW4gPj0gcGVyQ29udGluZW50KSBicmVhazsKICAgICAgfQogICAgICBjb25zdCB0b3RhbCA9IE51bWJlcihwYXlsb2FkPy50b3RhbCk7CiAgICAgIGlmIChyb3dzLmxlbmd0aCA8IGxpbWl0KSBicmVhazsgLy8gbGFzdCBwYWdlCiAgICAgIGlmIChOdW1iZXIuaXNGaW5pdGUodG90YWwpICYmIG9mZnNldCArIGxpbWl0ID49IHRvdGFsKSBicmVhazsKICAgICAgYXdhaXQgc2xlZXAoMzAwKTsKICAgIH0KICAgIGF3YWl0IHNsZWVwKDMwMCk7CiAgfQoKICBjb25zdCB0cmltbWVkID0gY2FtZXJhcy5zbGljZSgwLCBtYXhDb3VudCk7CiAgY29uc29sZS5sb2coCiAgICBgW0NDVFZdIExvYWRlZCBXaW5keSB3ZWJjYW0gc291cmNlczogJHtjYW1lcmFzLmxlbmd0aH0gYWNyb3NzICR7V0lORFlfQ09OVElORU5UUy5sZW5ndGh9IGNvbnRpbmVudHMgKHVzaW5nICR7dHJpbW1lZC5sZW5ndGh9KWAsCiAgKTsKICAvLyBQcmltZSB0aGUgZnJhbWUgVVJMIGNhY2hlIHNvIHRoZSBmaXJzdCBmcmFtZSByZXF1ZXN0cyBkb24ndCBhbGwgbWlzcy4KICBjb25zdCBub3cgPSBEYXRlLm5vdygpOwogIGZvciAoY29uc3QgY2FtZXJhIG9mIHRyaW1tZWQpIHsKICAgIGNvbnN0IHdlYmNhbUlkID0gY2FtZXJhLmlkLnJlcGxhY2UoL153aW5keS0vLCAnJyk7CiAgICBpZiAoY2FtZXJhLnNuYXBzaG90VXJsICYmIHdlYmNhbUlkKSB7CiAgICAgIGltYWdlVXJsQ2FjaGUuc2V0KHdlYmNhbUlkLCB7IHVybDogY2FtZXJhLnNuYXBzaG90VXJsLCBmZXRjaGVkQXQ6IG5vdyB9KTsKICAgIH0KICB9CiAgcmV0dXJuIHRyaW1tZWQ7Cn0KCi8qKgogKiBQZXItY2FtZXJhIGZyZXNoIGltYWdlIFVSTCBjYWNoZS4gRnJlZS10aWVyIHRva2VucyBleHBpcmUgYWZ0ZXIgMTAgbWluOwogKiBlbnRyaWVzIGFyZSByZWZyZXNoZWQgcHJvYWN0aXZlbHkgYXQgOCBtaW4gYW5kIG9uIGRlbWFuZCBhZnRlciBhIDQwMS4KICoKICogQHR5cGUge01hcDxzdHJpbmcse3VybDpzdHJpbmcsZmV0Y2hlZEF0Om51bWJlcn0+fQogKi8KY29uc3QgaW1hZ2VVcmxDYWNoZSA9IG5ldyBNYXAoKTsKCi8qKgogKiBVbndyYXAgYSBkZXRhaWwgcGF5bG9hZCAoZWl0aGVyIGB7d2ViY2FtOnsuLi59fWAgb3IgdGhlIHdlYmNhbSBpdHNlbGYpIGFuZAogKiBwdWxsIGl0cyBjdXJyZW50IGltYWdlIFVSTC4KICovCmZ1bmN0aW9uIGV4dHJhY3REZXRhaWxJbWFnZVVybChwYXlsb2FkKSB7CiAgaWYgKCFwYXlsb2FkIHx8IHR5cGVvZiBwYXlsb2FkICE9PSAnb2JqZWN0JykgcmV0dXJuICcnOwogIGNvbnN0IHdlYmNhbSA9IHBheWxvYWQud2ViY2FtIHx8IHBheWxvYWQ7CiAgcmV0dXJuIGV4dHJhY3RXaW5keUltYWdlVXJsKHdlYmNhbSk7Cn0KCi8qKgogKiBGcmVzaCAodG9rZW4tdmFsaWQpIGltYWdlIFVSTCBmb3Igb25lIFdpbmR5IHdlYmNhbS4gVXNlcyB0aGUgY2FjaGUgd2hlbgogKiBmcmVzaDsgb3RoZXJ3aXNlIGNhbGxzIHRoZSBkZXRhaWwgZW5kcG9pbnQgb25jZS4gUmV0dXJucyB0aGUgc3RhbGUgY2FjaGVkCiAqIFVSTCBhcyBhIGxhc3QgcmVzb3J0IHNvIGEgdHJhbnNpZW50IEFQSSBvdXRhZ2UgZGVncmFkZXMgdG8gIm1heWJlIGV4cGlyZWQiCiAqIGluc3RlYWQgb2YgImRlZmluaXRlbHkgbm90aGluZyIuCiAqCiAqIEBwYXJhbSB7c3RyaW5nfSB3ZWJjYW1JZCAtIE51bWVyaWMgV2luZHkgd2ViY2FtIGlkICh3aXRob3V0IHRoZSB3aW5keS0gcHJlZml4KS4KICogQHBhcmFtIHtvYmplY3R9IFtvcHRpb25zXQogKiBAcGFyYW0ge2Jvb2xlYW59IFtvcHRpb25zLmZvcmNlPWZhbHNlXSAtIFNraXAgdGhlIGNhY2hlIGFuZCByZS1mZXRjaC4KICogQHJldHVybnMge1Byb21pc2U8c3RyaW5nfG51bGw+fQogKi8KZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGdldFdpbmR5SW1hZ2VVcmwod2ViY2FtSWQsIHsgZm9yY2UgPSBmYWxzZSB9ID0ge30pIHsKICBjb25zdCBpZCA9IFN0cmluZyh3ZWJjYW1JZCB8fCAnJykudHJpbSgpOwogIGlmICghaWQgfHwgIXdpbmR5QXBpQ29uZmlndXJlZCgpKSByZXR1cm4gbnVsbDsKICBjb25zdCBjYWNoZWQgPSBpbWFnZVVybENhY2hlLmdldChpZCk7CiAgaWYgKAogICAgIWZvcmNlICYmCiAgICBjYWNoZWQgJiYKICAgIERhdGUubm93KCkgLSBjYWNoZWQuZmV0Y2hlZEF0IDw9IFdJTkRZX0lNQUdFX0NBQ0hFX01TCiAgKSB7CiAgICByZXR1cm4gY2FjaGVkLnVybDsKICB9CiAgY29uc3QgcGF5bG9hZCA9IGF3YWl0IHdpbmR5R2V0KAogICAgYC93ZWJjYW1zLyR7ZW5jb2RlVVJJQ29tcG9uZW50KGlkKX0/aW5jbHVkZT0ke2VuY29kZVVSSUNvbXBvbmVudCgnaW1hZ2VzJyl9Jmxhbmc9ZW5gLAogICAgYGRldGFpbCAke2lkfWAsCiAgKTsKICBjb25zdCB1cmwgPSBleHRyYWN0RGV0YWlsSW1hZ2VVcmwocGF5bG9hZCk7CiAgaWYgKGlzV2luZHlJbWFnZVVybCh1cmwpKSB7CiAgICBpbWFnZVVybENhY2hlLnNldChpZCwgeyB1cmwsIGZldGNoZWRBdDogRGF0ZS5ub3coKSB9KTsKICAgIHJldHVybiB1cmw7CiAgfQogIGlmICh1cmwpIHsKICAgIGNvbnNvbGUud2FybignW0NDVFZdIFdpbmR5IGRldGFpbCByZXR1cm5lZCBhIG5vbi1XaW5keSBpbWFnZSBob3N0OyByZWZ1c2luZycpOwogIH0KICByZXR1cm4gY2FjaGVkPy51cmwgfHwgbnVsbDsKfQoKLyoqIERyb3Agb25lIGNhbWVyYSdzIGNhY2hlZCBpbWFnZSBVUkwgKGFmdGVyIGEgNDAxKS4gKi8KZXhwb3J0IGZ1bmN0aW9uIGludmFsaWRhdGVXaW5keUltYWdlVXJsKHdlYmNhbUlkKSB7CiAgaW1hZ2VVcmxDYWNoZS5kZWxldGUoU3RyaW5nKHdlYmNhbUlkIHx8ICcnKS50cmltKCkpOwp9CgovKioKICogRmV0Y2ggb25lIGN1cnJlbnQgZnJhbWUgZm9yIGEgV2luZHkgY2FtZXJhLCByZWZyZXNoaW5nIHRoZSB0b2tlbml6ZWQgaW1hZ2UKICogVVJMIG9uIGV4cGlyeS4gUmV0dXJucyB0aGUgbWVkaWEuanMgcmVzdWx0IHNoYXBlICh7b2ssIGJvZHksIGNvbnRlbnRUeXBlfSkKICogb3IgbnVsbCB3aGVuIG5vdGhpbmcgdXNhYmxlIGNhbWUgYmFjayAodGhlIGNhbGxlciBydW5zIGl0cyBmYWxsYmFja3MpLgogKgogKiBAcGFyYW0ge3N0cmluZ30gY2FtZXJhSWQgLSBDYXRhbG9nIGlkLCBgd2luZHkte3dlYmNhbUlkfWAuCiAqIEByZXR1cm5zIHtQcm9taXNlPHtvazp0cnVlLGJvZHk6QnVmZmVyLGNvbnRlbnRUeXBlOnN0cmluZ318bnVsbD59CiAqLwpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZmV0Y2hXaW5keUZyYW1lSW1hZ2UoY2FtZXJhSWQpIHsKICBjb25zdCB3ZWJjYW1JZCA9IFN0cmluZyhjYW1lcmFJZCB8fCAnJykucmVwbGFjZSgvXndpbmR5LS8sICcnKTsKICBpZiAoIXdlYmNhbUlkKSByZXR1cm4gbnVsbDsKICBsZXQgdXJsID0gYXdhaXQgZ2V0V2luZHlJbWFnZVVybCh3ZWJjYW1JZCk7CiAgbGV0IGltYWdlID0gdXJsID8gYXdhaXQgZmV0Y2hDY3R2SW1hZ2VGcm9tVXBzdHJlYW0odXJsKSA6IG51bGw7CiAgaWYgKCFpbWFnZT8ub2spIHsKICAgIC8vIFRva2VuIHByb2JhYmx5IGV4cGlyZWQgKFdpbmR5IGFuc3dlcnMgNDAxIG9uIHN0YWxlIHRva2Vucyk6IHJlZnJlc2gKICAgIC8vIG9uY2UgYW5kIHJldHJ5IGJlZm9yZSBnaXZpbmcgdXAgdG8gdGhlIGZhbGxiYWNrIGNoYWluLgogICAgaW52YWxpZGF0ZVdpbmR5SW1hZ2VVcmwod2ViY2FtSWQpOwogICAgdXJsID0gYXdhaXQgZ2V0V2luZHlJbWFnZVVybCh3ZWJjYW1JZCwgeyBmb3JjZTogdHJ1ZSB9KTsKICAgIGltYWdlID0gdXJsID8gYXdhaXQgZmV0Y2hDY3R2SW1hZ2VGcm9tVXBzdHJlYW0odXJsKSA6IG51bGw7CiAgfQogIHJldHVybiBpbWFnZT8ub2sgPyBpbWFnZSA6IG51bGw7Cn0K
+import {
+  WINDY_API_BASE,
+  WINDY_IMAGE_CACHE_MS,
+  WINDY_FETCH_TIMEOUT_MS,
+  WINDY_CONTINENTS,
+  DEFAULT_WINDY_MAX_SOURCES,
+  DEFAULT_WINDY_PAGES_PER_CONTINENT,
+} from './constants.js';
+import {
+  fallbackHeadingFromId,
+  toFiniteNumber,
+  isPlausibleLatLon,
+} from './normalize.js';
+import { fetchCctvImageFromUpstream } from './media.js';
+
+/**
+ * Windy Webcams API v3 pack (https://api.windy.com/webcams/docs).
+ *
+ * The world's largest public webcam directory (~68k cameras). Auth is the
+ * `x-windy-api-key` header; the key comes from the WINDY_API_KEY env var and
+ * is never written anywhere. Free-tier image URLs carry a token that expires
+ * after 10 minutes, so frame serving keeps a per-camera URL cache
+ * (WINDY_IMAGE_CACHE_MS, 8 min) and refreshes via the detail endpoint on
+ * expiry/401. Player URLs are Windy iframe embeds (not HLS), so every Windy
+ * camera is an 'image' feed on the existing 2.5s refresh cadence; the embed
+ * URL rides along as `playerUrl` for future panel use.
+ */
+
+/** Trimmed API key, or '' when unset. */
+function windyApiKey() {
+  return String(process.env.WINDY_API_KEY || '').trim();
+}
+
+/** True when the pack can talk to Windy at all. */
+export function windyApiConfigured() {
+  return windyApiKey().length > 0;
+}
+
+/**
+ * GET one Windy v3 path with the API key header. Returns parsed JSON, or
+ * null on auth failure / rate limit / transport error (each logged once per
+ * call site context).
+ *
+ * @param {string} path - Path + query, e.g. "/webcams?limit=50".
+ * @param {string} context - Log label for failures.
+ * @returns {Promise<object|null>}
+ */
+async function windyGet(path, context) {
+  const key = windyApiKey();
+  if (!key) return null;
+  let resp;
+  try {
+    resp = await fetch(`${WINDY_API_BASE}${path}`, {
+      headers: {
+        Accept: 'application/json',
+        'x-windy-api-key': key,
+        'User-Agent': 'gods-eye-view-cctv-proxy/1.0',
+      },
+      signal: AbortSignal.timeout(WINDY_FETCH_TIMEOUT_MS),
+    });
+  } catch (error) {
+    console.warn(
+      '[CCTV] Windy API request failed:',
+      context,
+      error?.message || error,
+    );
+    return null;
+  }
+  if (resp.status === 401 || resp.status === 403) {
+    console.warn(
+      '[CCTV] Windy API auth failed (HTTP %s) during %s; check WINDY_API_KEY',
+      resp.status,
+      context,
+    );
+    return null;
+  }
+  if (resp.status === 429) {
+    console.warn('[CCTV] Windy API rate limited during', context);
+    return null;
+  }
+  if (!resp.ok) {
+    console.warn('[CCTV] Windy API HTTP %s during %s', resp.status, context);
+    return null;
+  }
+  try {
+    return await resp.json();
+  } catch (error) {
+    console.warn(
+      '[CCTV] Windy API bad JSON during',
+      context,
+      error?.message || error,
+    );
+    return null;
+  }
+}
+
+/** Extract the current snapshot URL from a webcam record (any shape). */
+function extractWindyImageUrl(webcam) {
+  const images = webcam?.images || {};
+  const current = images.current || images.preview || {};
+  const url = String(
+    current.url || current.previewUrl || images.url || '',
+  ).trim();
+  return url;
+}
+
+/** Extract the live player embed URL, if the webcam publishes one. */
+function extractWindyPlayerUrl(webcam) {
+  const player = webcam?.player || {};
+  return String(player.live || player.embed || '').trim();
+}
+
+/** Extract normalized location fields from a webcam record. */
+function extractWindyLocation(webcam) {
+  const loc = webcam?.location || {};
+  return {
+    lat: toFiniteNumber(loc.latitude ?? loc.lat),
+    lon: toFiniteNumber(loc.longitude ?? loc.lon),
+    city: String(loc.city || '').trim(),
+    country: String(loc.country || '').trim(),
+    countryCode: String(loc.countryCode || loc.country_code || '')
+      .trim()
+      .toUpperCase(),
+  };
+}
+
+/**
+ * Only Windy-served image hosts are accepted for frame URLs. The API serves
+ * every webcam image through imgproxy.windy.com; pinning the host keeps a
+ * hostile API response from steering the frame proxy at an arbitrary origin
+ * (the frame route otherwise only fetches server-registered URLs).
+ *
+ * @param {string} url
+ * @returns {boolean}
+ */
+export function isWindyImageUrl(url) {
+  try {
+    const parsed = new URL(String(url || '').trim());
+    if (parsed.protocol !== 'https:') return false;
+    const host = parsed.hostname.toLowerCase();
+    return host === 'imgproxy.windy.com' || host.endsWith('.windy.com');
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * One Windy webcam record -> one normalized CCTV source, or null when the
+ * record is unusable (inactive, no coords, no image).
+ *
+ * Exported for unit tests.
+ *
+ * @param {object} webcam - Raw webcam object from the v3 API.
+ * @returns {?object}
+ */
+export function windyWebcamToSource(webcam) {
+  const webcamId = String(webcam?.webcamId ?? webcam?.id ?? '').trim();
+  if (!webcamId) return null;
+  // The API returns webcams of all statuses unless filtered; only live ones
+  // belong on the globe.
+  if (String(webcam?.status || '').toLowerCase() !== 'active') return null;
+  const loc = extractWindyLocation(webcam);
+  if (!isPlausibleLatLon(loc.lat, loc.lon)) return null;
+  const imageUrl = extractWindyImageUrl(webcam);
+  if (!isWindyImageUrl(imageUrl)) return null;
+
+  const cameraId = `windy-${webcamId}`;
+  const title = String(webcam?.title || `Windy webcam ${webcamId}`).trim();
+  return {
+    id: cameraId,
+    name: title,
+    city: loc.city || loc.country || 'Windy',
+    cityId: loc.countryCode
+      ? `windy-${loc.countryCode.toLowerCase()}`
+      : 'windy',
+    provider: 'Windy',
+    lat: loc.lat,
+    lon: loc.lon,
+    // No compass heading anywhere in the dataset -> id-hash fallback, low
+    // confidence (same personality as headingless TfL/Fintraffic cameras).
+    headingDeg: fallbackHeadingFromId(cameraId),
+    headingConfidence: 'low',
+    pitchDeg: -18,
+    fovDeg: 44,
+    rangeM: 145,
+    mountHeightM: 8,
+    groundElevationM: 0, // prior only; the client's ground snap corrects.
+    feedType: 'image',
+    url: imageUrl,
+    snapshotUrl: imageUrl,
+    sourceKind: 'windy-webcams',
+    license: 'Windy.com Webcams API',
+    playerUrl: extractWindyPlayerUrl(webcam),
+  };
+}
+
+/** Small delay between paged requests to stay polite on the free tier. */
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Fetch and normalize Windy webcams, spread across continents for global
+ * coverage. Each continent contributes up to its share of the pack cap,
+ * popularity-first, so the globe fills evenly instead of clustering on the
+ * densest region. Every pack failure degrades to [] (logged), never throws.
+ *
+ * Env knobs: WINDY_API_KEY (required), CCTV_WINDY_MAX_SOURCES (default 600),
+ * CCTV_WINDY_PAGES_PER_CONTINENT (default 3, each page is limit=50).
+ *
+ * @returns {Promise<Array<object>>} Normalized camera source objects.
+ */
+export async function loadWindySourcesFromApi() {
+  if (!windyApiConfigured()) {
+    console.warn('[CCTV] WINDY_API_KEY not set; skipping Windy webcam pack');
+    return [];
+  }
+  const maxRaw = Number(
+    process.env.CCTV_WINDY_MAX_SOURCES || DEFAULT_WINDY_MAX_SOURCES,
+  );
+  const maxCount = Number.isFinite(maxRaw)
+    ? Math.max(8, Math.min(2000, Math.floor(maxRaw)))
+    : DEFAULT_WINDY_MAX_SOURCES;
+  const pagesRaw = Number(
+    process.env.CCTV_WINDY_PAGES_PER_CONTINENT ||
+      DEFAULT_WINDY_PAGES_PER_CONTINENT,
+  );
+  const pagesPerContinent = Number.isFinite(pagesRaw)
+    ? Math.max(1, Math.min(8, Math.floor(pagesRaw)))
+    : DEFAULT_WINDY_PAGES_PER_CONTINENT;
+  const perContinent = Math.max(
+    8,
+    Math.ceil(maxCount / WINDY_CONTINENTS.length),
+  );
+
+  const cameras = [];
+  const seen = new Set();
+  for (const continent of WINDY_CONTINENTS) {
+    let taken = 0;
+    for (let page = 0; page < pagesPerContinent && taken < perContinent; page++) {
+      const offset = page * 50;
+      // Free tier caps offset at 1000; we never page that deep anyway.
+      if (offset >= 1000) break;
+      const limit = Math.min(50, perContinent - taken);
+      const path =
+        `/webcams?limit=${limit}&offset=${offset}` +
+        `&continents=${encodeURIComponent(continent)}` +
+        `&include=${encodeURIComponent('location,images,player')}` +
+        `&sort=popularity&sortDirection=desc&lang=en`;
+      const payload = await windyGet(path, `list ${continent}`);
+      if (!payload) break; // auth/rate/transport failure: stop this continent
+      const rows = Array.isArray(payload?.webcams) ? payload.webcams : [];
+      if (!rows.length) break;
+      for (const row of rows) {
+        const source = windyWebcamToSource(row);
+        if (!source || seen.has(source.id)) continue;
+        seen.add(source.id);
+        cameras.push(source);
+        taken += 1;
+        if (taken >= perContinent) break;
+      }
+      const total = Number(payload?.total);
+      if (rows.length < limit) break; // last page
+      if (Number.isFinite(total) && offset + limit >= total) break;
+      await sleep(300);
+    }
+    await sleep(300);
+  }
+
+  const trimmed = cameras.slice(0, maxCount);
+  console.log(
+    `[CCTV] Loaded Windy webcam sources: ${cameras.length} across ${WINDY_CONTINENTS.length} continents (using ${trimmed.length})`,
+  );
+  // Prime the frame URL cache so the first frame requests don't all miss.
+  const now = Date.now();
+  for (const camera of trimmed) {
+    const webcamId = camera.id.replace(/^windy-/, '');
+    if (camera.snapshotUrl && webcamId) {
+      imageUrlCache.set(webcamId, { url: camera.snapshotUrl, fetchedAt: now });
+    }
+  }
+  return trimmed;
+}
+
+/**
+ * Per-camera fresh image URL cache. Free-tier tokens expire after 10 min;
+ * entries are refreshed proactively at 8 min and on demand after a 401.
+ *
+ * @type {Map<string,{url:string,fetchedAt:number}>}
+ */
+const imageUrlCache = new Map();
+
+/**
+ * Unwrap a detail payload (either `{webcam:{...}}` or the webcam itself) and
+ * pull its current image URL.
+ */
+function extractDetailImageUrl(payload) {
+  if (!payload || typeof payload !== 'object') return '';
+  const webcam = payload.webcam || payload;
+  return extractWindyImageUrl(webcam);
+}
+
+/**
+ * Fresh (token-valid) image URL for one Windy webcam. Uses the cache when
+ * fresh; otherwise calls the detail endpoint once. Returns the stale cached
+ * URL as a last resort so a transient API outage degrades to "maybe expired"
+ * instead of "definitely nothing".
+ *
+ * @param {string} webcamId - Numeric Windy webcam id (without the windy- prefix).
+ * @param {object} [options]
+ * @param {boolean} [options.force=false] - Skip the cache and re-fetch.
+ * @returns {Promise<string|null>}
+ */
+export async function getWindyImageUrl(webcamId, { force = false } = {}) {
+  const id = String(webcamId || '').trim();
+  if (!id || !windyApiConfigured()) return null;
+  const cached = imageUrlCache.get(id);
+  if (
+    !force &&
+    cached &&
+    Date.now() - cached.fetchedAt <= WINDY_IMAGE_CACHE_MS
+  ) {
+    return cached.url;
+  }
+  const payload = await windyGet(
+    `/webcams/${encodeURIComponent(id)}?include=${encodeURIComponent('images')}&lang=en`,
+    `detail ${id}`,
+  );
+  const url = extractDetailImageUrl(payload);
+  if (isWindyImageUrl(url)) {
+    imageUrlCache.set(id, { url, fetchedAt: Date.now() });
+    return url;
+  }
+  if (url) {
+    console.warn('[CCTV] Windy detail returned a non-Windy image host; refusing');
+  }
+  return cached?.url || null;
+}
+
+/** Drop one camera's cached image URL (after a 401). */
+export function invalidateWindyImageUrl(webcamId) {
+  imageUrlCache.delete(String(webcamId || '').trim());
+}
+
+/**
+ * Fetch one current frame for a Windy camera, refreshing the tokenized image
+ * URL on expiry. Returns the media.js result shape ({ok, body, contentType})
+ * or null when nothing usable came back (the caller runs its fallbacks).
+ *
+ * @param {string} cameraId - Catalog id, `windy-{webcamId}`.
+ * @returns {Promise<{ok:true,body:Buffer,contentType:string}|null>}
+ */
+export async function fetchWindyFrameImage(cameraId) {
+  const webcamId = String(cameraId || '').replace(/^windy-/, '');
+  if (!webcamId) return null;
+  let url = await getWindyImageUrl(webcamId);
+  let image = url ? await fetchCctvImageFromUpstream(url) : null;
+  if (!image?.ok) {
+    // Token probably expired (Windy answers 401 on stale tokens): refresh
+    // once and retry before giving up to the fallback chain.
+    invalidateWindyImageUrl(webcamId);
+    url = await getWindyImageUrl(webcamId, { force: true });
+    image = url ? await fetchCctvImageFromUpstream(url) : null;
+  }
+  return image?.ok ? image : null;
+}
