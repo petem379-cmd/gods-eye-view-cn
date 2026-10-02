@@ -169,7 +169,7 @@ export function createCyclonesLayer({
   }
   const layer = {
     id: 'weather-cyclones',
-    name: 'Cyclone advisories',
+    name: '气旋预警',
     icon: '◉',
     source: 'NOAA NHC / CPHC',
     updateInterval: 300_000,

@@ -32,7 +32,7 @@ export const FIRST_RUN_SESSION_KEY = 'gev:first-run-mission-session:v1';
  * call at review time, not an edit.
  * @type {'ENVIRONMENTAL'|'EARTH_WATCH'|'ACTIVE_EVENTS'}
  */
-export const ENVIRONMENTAL_LABEL_CHOICE = 'ENVIRONMENTAL';
+export const ENVIRONMENTAL_LABEL_CHOICE = '环境监测';
 
 const ENVIRONMENTAL_LABELS = Object.freeze({
   ENVIRONMENTAL: Object.freeze({ title: 'ENVIRONMENTAL' }),

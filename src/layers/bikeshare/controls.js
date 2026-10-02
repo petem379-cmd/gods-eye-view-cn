@@ -4,7 +4,7 @@ export function createControls({ state: layerState, services, parts, source }) {
   const methods = {
     id: 'bikeshare',
 
-    name: 'Bikeshare',
+    name: '共享单车',
 
     icon: '🚲',
 

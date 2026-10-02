@@ -789,7 +789,7 @@ export function createRecentImageryLayer({
 
   const layer = {
     id: 'recent-imagery',
-    name: 'Recent Imagery',
+    name: '最新影像',
     icon: '🛰',
     source: 'NASA GIBS · HLS + VIIRS',
     updateInterval: 0,

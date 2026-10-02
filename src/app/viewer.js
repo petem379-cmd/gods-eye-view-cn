@@ -106,6 +106,8 @@ export function installTrackpadPinchZoom(
 export function createApplicationViewer({ container, creditContainer }) {
   if (!container || !creditContainer)
     throw new TypeError('Viewer and credit containers are required');
+  // 2026-10-02: 移动端优化 — iOS 上 MSAA 会导致花屏，降分辨率保流畅
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent || '');
   const viewer = new Cesium.Viewer(container, {
     timeline: false,
     animation: false,
@@ -120,11 +122,19 @@ export function createApplicationViewer({ container, creditContainer }) {
     infoBox: false,
     baseLayer: false,
     creditContainer,
-    msaaSamples: 4,
-    contextOptions: { webgl: { preserveDrawingBuffer: true } },
+    msaaSamples: isMobile ? 1 : 4,
+    contextOptions: { webgl: {
+      preserveDrawingBuffer: false,
+      antialias: !isMobile,
+      powerPreference: 'high-performance',
+    } },
   });
   try {
-    viewer.targetFrameRate = 60;
+    viewer.targetFrameRate = isMobile ? 30 : 60;
+    if (isMobile) {
+      // 移动端降分辨率，减少 GPU 负载
+      viewer.resolutionScale = 0.75;
+    }
     // Before any tile builds a draw command: Cesium's per-vertex model
     // atmosphere fails to LINK on Apple's Metal backend and kills the
     // render loop. See app/atmosphereCompat.js.

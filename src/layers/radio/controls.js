@@ -2,7 +2,7 @@ export function createControls({ state: layerState, services, parts, source }) {
   const methods = {
     id: 'radio',
 
-    name: 'Radio',
+    name: '电台',
 
     icon: '◉',
 

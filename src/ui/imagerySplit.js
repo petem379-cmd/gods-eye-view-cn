@@ -13,7 +13,7 @@ function defaultViewportWidth() {
 }
 
 function defaultValueText(beforePercent, afterPercent) {
-  return `A ${beforePercent} percent, B ${afterPercent} percent`;
+  return `A ${beforePercent} 百分比，B ${afterPercent} 百分比`;
 }
 
 /**

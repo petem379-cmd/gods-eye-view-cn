@@ -2,7 +2,7 @@ export function createControls({ state: layerState, services, parts, source }) {
   const methods = {
     id: 'rocket-launches',
 
-    name: 'Space Missions (30d)',
+    name: '太空任务(30天)',
 
     icon: '🚀',
 

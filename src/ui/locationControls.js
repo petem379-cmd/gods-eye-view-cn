@@ -144,7 +144,7 @@ export class LocationControls {
       const icon = this.doc.createElement('span');
       icon.className = 'orbit-icon';
       icon.textContent = '↻';
-      this.orbitIndicator.append(icon, ' ORBIT');
+      this.orbitIndicator.append(icon, ' 环绕');
       this.doc.body.appendChild(this.orbitIndicator);
     }
     return this.orbitIndicator;

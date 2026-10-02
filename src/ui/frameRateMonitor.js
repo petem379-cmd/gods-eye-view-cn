@@ -8,7 +8,7 @@ export function createFrameRateMonitor({ viewer, documentRef = document }) {
   readout.className = 'frame-rate-readout';
   readout.hidden = true;
   readout.textContent = 'FPS —';
-  readout.title = 'Rendered globe frames per second · toggle with `';
+  readout.title = '每秒渲染的地球帧数 · 按 ` 切换';
   host.appendChild(readout);
   let removeFrameListener = null;
   let timer = null;

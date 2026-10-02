@@ -47,22 +47,22 @@ export function bindRadioControls() {
     );
     if (displayOpen) this.actions.revealStyleParameters();
     if (this._cockpitDisplayToggleBtn) {
-      const action = displayOpen ? 'Collapse' : 'Expand';
+      const action = displayOpen ? '折叠' : '展开';
       this._cockpitDisplayToggleBtn.textContent = displayOpen ? '▶' : '◀';
       this._cockpitDisplayToggleBtn.setAttribute(
         'aria-label',
-        `${action} Cockpit display options`,
+        `${action}座舱显示选项`,
       );
-      this._cockpitDisplayToggleBtn.title = `${action} Cockpit display options`;
+      this._cockpitDisplayToggleBtn.title = `${action}座舱显示选项`;
     }
     if (this._cockpitRadioToggleBtn) {
-      const action = radioOpen ? 'Collapse' : 'Expand';
+      const action = radioOpen ? '折叠' : '展开';
       this._cockpitRadioToggleBtn.textContent = radioOpen ? '▶' : '◀';
       this._cockpitRadioToggleBtn.setAttribute(
         'aria-label',
-        `${action} Cockpit Radio controls`,
+        `${action}座舱收音机控制`,
       );
-      this._cockpitRadioToggleBtn.title = `${action} Cockpit Radio controls`;
+      this._cockpitRadioToggleBtn.title = `${action}座舱收音机控制`;
     }
     if (!expanded && returnFocus) {
       (kind === 'display'
@@ -139,18 +139,18 @@ export function bindRadioControls() {
     syncTunerTape(resolvedCoordinate);
     if (this._radioTunerValue) {
       this._radioTunerValue.textContent = station
-        ? `CH ${String(slot.stationIndex + 1).padStart(2, '0')} / ${String(this._radioTunerStations.length).padStart(2, '0')}`
-        : 'NO STATIONS';
+        ? `频道 ${String(slot.stationIndex + 1).padStart(2, '0')} / ${String(this._radioTunerStations.length).padStart(2, '0')}`
+        : '无电台';
     }
     if (this._radioTunerStation)
       this._radioTunerStation.textContent =
-        station?.name || 'NO STATION AVAILABLE';
+        station?.name || '无可用电台';
     if (this._radioTunerSlider) {
       this._radioTunerSlider.setAttribute(
         'aria-valuetext',
         station
-          ? `${station.name}, station ${slot.stationIndex + 1} of ${this._radioTunerStations.length}`
-          : 'No station available',
+          ? `${station.name}，第 ${slot.stationIndex + 1} 个电台，共 ${this._radioTunerStations.length} 个`
+          : '无可用电台',
       );
     }
     if (syncStatic)
@@ -301,12 +301,12 @@ export function bindRadioControls() {
       this._radioTunerBandPinnedForNavigation = false;
       if (result.reason === 'station-unavailable') {
         if (this._radioTunerValue)
-          this._radioTunerValue.textContent = 'OFF AIR';
+          this._radioTunerValue.textContent = '停播';
         if (this._radioTunerStation)
-          this._radioTunerStation.textContent = 'STATION UNAVAILABLE';
+          this._radioTunerStation.textContent = '基站不可用';
         this._radioTunerSlider?.setAttribute(
           'aria-valuetext',
-          'Station unavailable after directory refresh',
+          '目录刷新后基站不可用',
         );
       }
     }
@@ -340,7 +340,7 @@ export function bindRadioControls() {
             origin: 'user',
             notificationToken,
           }),
-        `Radio could not ${enabling ? 'start' : 'stop'} cleanly`,
+        `收音机未能${enabling ? '正常启动' : '正常停止'}`,
       );
       if (this.destroyed || toggled === false) return;
       if (

@@ -6,19 +6,19 @@ import { GUIDANCE_STATUSES } from '../loadingFeedback.js';
 import { keySetupRequirement } from '../keySetupCore.mjs';
 import { createWeatherPanel } from './weatherPanel.js';
 const FEED_STATE_LABELS = Object.freeze({
-  nominal: 'ON',
-  loading: 'LOADING',
-  degraded: 'DEGRADED',
-  stale: 'STALE',
-  partial: 'PARTIAL',
-  fallback: 'FALLBACK',
-  unavailable: 'UNAVAILABLE',
+  nominal: '开',
+  loading: '加载中',
+  degraded: '降级',
+  stale: '过期',
+  partial: '部分',
+  fallback: '回退',
+  unavailable: '不可用',
 });
 
 // Presentation order is independent of catalog registration and startup order.
 const PANEL_GROUPS = [
   {
-    label: 'Movement',
+    label: '移动',
     ids: [
       'satellites',
       'flights',
@@ -31,11 +31,11 @@ const PANEL_GROUPS = [
     ],
   },
   {
-    label: 'Cameras',
+    label: '摄像头',
     ids: ['cctv', 'recent-imagery'],
   },
   {
-    label: 'Infrastructure',
+    label: '基础设施',
     ids: [
       'alpr-cameras',
       'military-installations',
@@ -45,11 +45,11 @@ const PANEL_GROUPS = [
     ],
   },
   {
-    label: 'Events',
+    label: '事件',
     ids: ['rocket-launches', 'earthquakes', 'local-firms', 'fire-perimeters'],
   },
   {
-    label: 'Weather',
+    label: '天气',
     ids: [
       'wind',
       'weather-radar',
@@ -59,7 +59,7 @@ const PANEL_GROUPS = [
     ],
   },
   {
-    label: 'Utilities',
+    label: '实用工具',
     ids: ['directions', 'radio'],
   },
 ];
@@ -70,12 +70,12 @@ const PANEL_POSITIONS = new Map(
   PANEL_ORDER.map(({ id }, index) => [id, index]),
 );
 const PANEL_LABELS = {
-  'ais-live-vessels': 'Live Vessels',
-  bikeshare: 'Bike Share',
-  cctv: 'Cameras',
-  'alpr-cameras': 'Mapped ALPR Cameras',
-  'local-datacenters': 'Data Centers',
-  'local-firms': 'Active Fires',
+  'ais-live-vessels': '实时船舶',
+  bikeshare: '共享单车',
+  cctv: '监控',
+  'alpr-cameras': '已映射的 ALPR 摄像头',
+  'local-datacenters': '数据中心',
+  'local-firms': '活跃火点',
 };
 
 function panelLabel(layer) {
@@ -203,7 +203,7 @@ export class LayerPanel {
     for (const layer of layers) {
       if (!layer.showInTogglePanel) continue;
       const group =
-        PANEL_ORDER[PANEL_POSITIONS.get(layer.id)]?.label ?? 'Other layers';
+        PANEL_ORDER[PANEL_POSITIONS.get(layer.id)]?.label ?? '其他图层';
       if (group && group !== previousGroup) {
         const heading = document.createElement('h3');
         heading.className = 'data-layer-group-heading';
@@ -525,16 +525,16 @@ export class LayerPanel {
     const lifecycleState =
       layer.lifecycleState || (layer.enabled ? 'enabled' : 'disabled');
     if (lifecycleState === 'enabling' || lifecycleState === 'disabling') {
-      return `${lifecycleState.toUpperCase()} · ${source}`;
+      return `${lifecycleState === 'enabling' ? '启用中' : '禁用中'} · ${source}`;
     }
     if (layer.lifecycleUncertain) {
-      return `UNCERTAIN · ${source} · lifecycle state requires reconciliation`;
+      return `不确定 · ${source} · 生命周期状态需要协调`;
     }
     const presentedError =
       stats.error || stats.lastError || stats.managerRefreshError;
     if (presentedError) {
       if (typeof stats.retryInSec === 'number' && stats.retryInSec > 0) {
-        return `${stateLabel} · ${source} · ${presentedError} · retry ${stats.retryInSec}s`;
+        return `${stateLabel} · ${source} · ${presentedError} · ${stats.retryInSec} 秒后重试`;
       }
       return `${stateLabel} · ${source} · ${presentedError}`;
     }
@@ -547,12 +547,12 @@ export class LayerPanel {
     ) {
       return `${source} · ${stats.statusMessage.trim()}`;
     }
-    const ago = stats.lastUpdate ? this._timeAgo(stats.lastUpdate) : 'never';
+    const ago = stats.lastUpdate ? this._timeAgo(stats.lastUpdate) : '从未';
     if (stats.loading) {
       const loadingLabel =
         typeof stats.loadingLabel === 'string' && stats.loadingLabel.trim()
           ? stats.loadingLabel.trim()
-          : 'loading...';
+          : '加载中…';
       return `${source} · ${loadingLabel}`;
     }
     if (feedState === 'fallback') {
@@ -569,14 +569,14 @@ export class LayerPanel {
         Number.isInteger(rawRowCount) &&
         acceptedRowCount >= 0 &&
         rawRowCount > acceptedRowCount
-          ? `${acceptedRowCount} of ${rawRowCount} records accepted`
-          : 'incomplete snapshot';
+          ? `${acceptedRowCount}/${rawRowCount} 条记录已接受`
+          : '快照不完整';
       return `${stateLabel} · ${source} · ${detail} · ${ago}`;
     }
     if (feedState === 'stale') {
       const retry =
         typeof stats.retryInSec === 'number' && stats.retryInSec > 0
-          ? ` · retrying in ${stats.retryInSec}s`
+          ? ` · ${stats.retryInSec} 秒后重试`
           : '';
       return `${stateLabel} · ${source} · ${ago}${retry}`;
     }
@@ -615,12 +615,14 @@ export class LayerPanel {
     button.setAttribute('aria-disabled', String(transitioning));
     button.setAttribute('aria-busy', String(transitioning));
     button.textContent = transitioning
-      ? layer.lifecycleState.toUpperCase()
+      ? layer.lifecycleState === 'enabling'
+        ? '启用中'
+        : '禁用中'
       : uncertain
-        ? 'UNCERTAIN'
+        ? '不确定'
         : layer.enabled
           ? FEED_STATE_LABELS[feedState]
-          : 'OFF';
+          : '关';
     const keyGuidance = layerKeyRequirementTooltip(layer);
     // Name the missing key on the control itself: a row reading KEY REQUIRED
     // without saying WHICH key leaves a dead control and no next step. Empty
@@ -641,9 +643,9 @@ export class LayerPanel {
 
   _timeAgo(timestamp) {
     const diff = Math.floor((Date.now() - timestamp) / 1000);
-    if (diff < 5) return 'just now';
-    if (diff < 60) return `${diff}s ago`;
-    if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
-    return `${Math.floor(diff / 3600)}h ago`;
+    if (diff < 5) return '刚刚';
+    if (diff < 60) return `${diff} 秒前`;
+    if (diff < 3600) return `${Math.floor(diff / 60)} 分钟前`;
+    return `${Math.floor(diff / 3600)} 小时前`;
   }
 }

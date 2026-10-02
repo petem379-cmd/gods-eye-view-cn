@@ -90,7 +90,7 @@ export function createControls({ state: layerState, services, parts, source }) {
   const methods = {
     id: 'satellites',
 
-    name: 'Satellites',
+    name: '卫星',
 
     icon: '🛰️',
 

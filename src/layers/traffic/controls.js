@@ -42,7 +42,7 @@ export function createControls({ state: layerState, services, parts, source }) {
   const methods = {
     id: 'traffic',
 
-    name: 'Street Traffic',
+    name: '实时路况',
 
     icon: '🚗',
 

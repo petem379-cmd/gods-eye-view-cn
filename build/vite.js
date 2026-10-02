@@ -12,6 +12,8 @@ export function createBrowserViteConfig({
   command,
 } = {}) {
   return {
+    // 2026-10-02: 相对路径，itch.io iframe 等子目录托管可正常加载资源
+    base: './',
     plugins: [cesium(), applicationHtmlPlugin(), ...plugins],
     ...(publicDir === undefined ? {} : { publicDir }),
     // A production build must not clean the dependency cache a running dev

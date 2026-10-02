@@ -146,7 +146,7 @@ export const SHARPEN_SHADER = /* glsl */ `
 
 /** Stable display labels for the active style and inherited Cockpit vision. */
 export const STYLE_STATUS_LABELS = {
-  normal: 'NORMAL',
+  normal: '标准',
   retro: 'CRT',
   surveillance: 'NVG',
   thermal: 'FLIR',

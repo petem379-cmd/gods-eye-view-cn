@@ -199,10 +199,10 @@ export class IntelHUD {
         <div class="hud-content">
           <div class="hud-classification">TOP SECRET // SI-TK // NOFORN</div>
           <div class="hud-system">${this._missionId}  ${this._sensorId}</div>
-          <div class="hud-mode" id="hud-mode">NORMAL</div>
+          <div class="hud-mode" id="hud-mode">标准</div>
           <div class="hud-summary-wrap">
-            <div class="hud-summary-label">SUMMARY</div>
-            <div class="hud-summary" id="hud-summary">Awaiting telemetry...</div>
+            <div class="hud-summary-label">摘要</div>
+            <div class="hud-summary" id="hud-summary">等待遥测数据...</div>
           </div>
         </div>
       </div>
@@ -634,7 +634,7 @@ export class IntelHUD {
    */
   _composeSummary() {
     const m = this._latestMetrics;
-    if (!m) return 'Awaiting telemetry...';
+    if (!m) return '等待遥测数据...';
 
     const modeEl = document.getElementById('hud-mode');
     const modeLabel = modeEl?.textContent || 'NORMAL';

@@ -262,7 +262,7 @@ export function createQueries({
 
     id: 'flights',
 
-    name: 'Live Flights',
+    name: '实时航班',
 
     icon: '✈️',
 

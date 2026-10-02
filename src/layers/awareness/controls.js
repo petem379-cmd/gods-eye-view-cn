@@ -8,7 +8,7 @@ export function createControls({ state: layerState, services, parts, source }) {
   const methods = {
     id: 'military-awareness',
 
-    name: 'Global Context',
+    name: '全球态势',
 
     icon: '◎',
 
