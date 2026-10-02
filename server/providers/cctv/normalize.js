@@ -1,1 +1,523 @@
-aW1wb3J0IHsKICBub3JtYWxpemVGZWVkVHlwZSwKICBpc1ZpZGVvRmVlZFR5cGUsCn0gZnJvbSAnLi4vLi4vLi4vc3JjL3NvdXJjZXMvY2N0dlR5cGVzLmpzJzsKZXhwb3J0IHsgbm9ybWFsaXplRmVlZFR5cGUsIGlzVmlkZW9GZWVkVHlwZSB9OwppbXBvcnQgeyBkaXJlY3Rpb25Ub0hlYWRpbmcgfSBmcm9tICcuLi8uLi8uLi9zcmMvZGF0YS9kaXJlY3Rpb25UZXh0LmpzJzsKaW1wb3J0IHsgaGF2ZXJzaW5lS20gfSBmcm9tICcuLi9jb21tb24vZ2VvLmpzJzsKLyoqCiAqIEZOVi0xYSAzMi1iaXQgaGFzaCBvZiBhIHN0cmluZywgdXNlZCB0byBkZXJpdmUgZGV0ZXJtaW5pc3RpYyBwc2V1ZG8tcmFuZG9tCiAqIHZhbHVlcyAoZS5nLiBodWUgZm9yIHN5bnRoZXRpYyBTVkcgYmlsbGJvYXJkcywgZmFsbGJhY2sgaGVhZGluZyBhbmdsZXMpLgogKgogKiBAcGFyYW0ge3N0cmluZ30gdGV4dAogKiBAcmV0dXJucyB7bnVtYmVyfSBVbnNpZ25lZCAzMi1iaXQgaGFzaC4KICovCmV4cG9ydCBmdW5jdGlvbiBoYXNoU2VlZCh0ZXh0KSB7CiAgbGV0IGggPSAyMTY2MTM2MjYxID4+PiAwOyAvLyBGTlYgb2Zmc2V0IGJhc2lzCiAgZm9yIChsZXQgaSA9IDA7IGkgPCB0ZXh0Lmxlbmd0aDsgaSsrKSB7CiAgICBoIF49IHRleHQuY2hhckNvZGVBdChpKTsKICAgIGggPSBNYXRoLmltdWwoaCwgMTY3Nzc2MTkpOyAvLyBGTlYgcHJpbWUKICB9CiAgcmV0dXJuIGggPj4+IDA7Cn0KCi8qKgogKiBFc2NhcGUgc3BlY2lhbCBYTUwvSFRNTCBjaGFyYWN0ZXJzIGZvciBzYWZlIGVtYmVkZGluZyBpbiBTVkcgdGV4dCBub2Rlcy4KICoKICogQHBhcmFtIHtzdHJpbmd9IHRleHQKICogQHJldHVybnMge3N0cmluZ30KICovCmV4cG9ydCBmdW5jdGlvbiBlc2NhcGVYbWwodGV4dCkgewogIHJldHVybiBTdHJpbmcodGV4dCB8fCAnJykKICAgIC5yZXBsYWNlKC8mL2csICcmYW1wOycpCiAgICAucmVwbGFjZSgvPC9nLCAnJmx0OycpCiAgICAucmVwbGFjZSgvPi9nLCAnJmd0OycpCiAgICAucmVwbGFjZSgvIi9nLCAnJnF1b3Q7JykKICAgIC5yZXBsYWNlKC8nL2csICcmIzM5OycpOwp9CgovKioKICogQ29lcmNlIGEgdmFsdWUgdG8gYSBmaW5pdGUgbnVtYmVyLCByZXR1cm5pbmcgZmFsbGJhY2sgaWYgTmFOL0luZmluaXR5LgogKgogKiBAcGFyYW0geyp9IHZhbHVlCiAqIEBwYXJhbSB7bnVtYmVyfSBbZmFsbGJhY2s9TmFOXQogKiBAcmV0dXJucyB7bnVtYmVyfQogKi8KZXhwb3J0IGZ1bmN0aW9uIHRvRmluaXRlTnVtYmVyKHZhbHVlLCBmYWxsYmFjayA9IE5hTikgewogIGNvbnN0IG51bSA9IE51bWJlcih2YWx1ZSk7CiAgcmV0dXJuIE51bWJlci5pc0Zpbml0ZShudW0pID8gbnVtIDogZmFsbGJhY2s7Cn0KCi8qKgogKiBOb3JtYWxpemUgYSBjb2x1bW4vZmllbGQgbmFtZSB0byBhIGxvd2VyY2FzZSBzbmFrZV9jYXNlIGtleS4KICoKICogQHBhcmFtIHtzdHJpbmd9IHRleHQKICogQHJldHVybnMge3N0cmluZ30KICovCmV4cG9ydCBmdW5jdGlvbiBub3JtYWxpemVLZXkodGV4dCkgewogIHJldHVybiBTdHJpbmcodGV4dCB8fCAnJykKICAgIC50cmltKCkKICAgIC50b0xvd2VyQ2FzZSgpCiAgICAucmVwbGFjZSgvW15hLXowLTldKy9nLCAnXycpCiAgICAucmVwbGFjZSgvXl8rfF8rJC9nLCAnJyk7Cn0KCi8qKgogKiBQYXJzZSBhIFdLVCBQT0lOVCBzdHJpbmcgKGUuZy4gIlBPSU5UKC05Ny43NCAzMC4yNykiKSBpbnRvIGxhdC9sb24uCiAqCiAqIFdLVCB1c2VzIChsb24gbGF0KSBvcmRlcjsgcmV0dXJuZWQgb2JqZWN0IHVzZXMge2xhdCwgbG9ufS4KICoKICogQHBhcmFtIHtzdHJpbmd9IHZhbHVlCiAqIEByZXR1cm5zIHt7bGF0Om51bWJlciwgbG9uOm51bWJlcn19CiAqLwpleHBvcnQgZnVuY3Rpb24gcGFyc2VQb2ludFN0cmluZyh2YWx1ZSkgewogIGNvbnN0IG1hdGNoID0gU3RyaW5nKHZhbHVlIHx8ICcnKS5tYXRjaCgKICAgIC9QT0lOVFxzKlwoXHMqKC0/XGQrKD86XC5cZCspPylccysoLT9cZCsoPzpcLlxkKyk/KVxzKlwpL2ksCiAgKTsKICBpZiAoIW1hdGNoKSByZXR1cm4geyBsYXQ6IE5hTiwgbG9uOiBOYU4gfTsKICByZXR1cm4gewogICAgbG9uOiB0b0Zpbml0ZU51bWJlcihtYXRjaFsxXSksCiAgICBsYXQ6IHRvRmluaXRlTnVtYmVyKG1hdGNoWzJdKSwKICB9Owp9CgovKioKICogRXh0cmFjdCBsYXQvbG9uIGZyb20gYSB2YXJpZXR5IG9mIGNvb3JkaW5hdGUgcmVwcmVzZW50YXRpb25zLgogKgogKiBIYW5kbGVzIFdLVCBQT0lOVCBzdHJpbmdzLCBhbmQgb2JqZWN0cyB3aXRoIGxhdGl0dWRlL2xhdC95IG9yCiAqIGxvbmdpdHVkZS9sb24vbG5nL3ggcHJvcGVydGllcyAodmFyaW91cyBjYXNpbmcpLgogKgogKiBAcGFyYW0ge3N0cmluZ3xvYmplY3R8bnVsbH0gdmFsdWUKICogQHJldHVybnMge3tsYXQ6bnVtYmVyLCBsb246bnVtYmVyfX0KICovCmV4cG9ydCBmdW5jdGlvbiBjb2VyY2VMYXRMb24odmFsdWUpIHsKICBpZiAoIXZhbHVlKSByZXR1cm4geyBsYXQ6IE5hTiwgbG9uOiBOYU4gfTsKCiAgaWYgKHR5cGVvZiB2YWx1ZSA9PT0gJ3N0cmluZycpIHsKICAgIHJldHVybiBwYXJzZVBvaW50U3RyaW5nKHZhbHVlKTsKICB9CgogIGlmICh0eXBlb2YgdmFsdWUgIT09ICdvYmplY3QnKSB7CiAgICByZXR1cm4geyBsYXQ6IE5hTiwgbG9uOiBOYU4gfTsKICB9CgogIGNvbnN0IGxhdCA9IHRvRmluaXRlTnVtYmVyKAogICAgdmFsdWUubGF0aXR1ZGUgPz8gdmFsdWUubGF0ID8/IHZhbHVlLnkgPz8gdmFsdWUuTGF0aXR1ZGUgPz8gdmFsdWUuTGF0LAogICAgTmFOLAogICk7CiAgY29uc3QgbG9uID0gdG9GaW5pdGVOdW1iZXIoCiAgICB2YWx1ZS5sb25naXR1ZGUgPz8KICAgICAgdmFsdWUubG9uID8/CiAgICAgIHZhbHVlLmxuZyA/PwogICAgICB2YWx1ZS54ID8/CiAgICAgIHZhbHVlLkxvbmdpdHVkZSA/PwogICAgICB2YWx1ZS5Mb24sCiAgICBOYU4sCiAgKTsKICByZXR1cm4geyBsYXQsIGxvbiB9Owp9CgovKioKICogRXh0cmFjdCBnZW9ncmFwaGljIGNvb3JkaW5hdGVzIGZyb20gYW4gQXVzdGluIE9wZW4gRGF0YSBjYW1lcmEgcmVjb3JkLgogKgogKiBUcmllcyBzZXZlcmFsIGNhbmRpZGF0ZSBmaWVsZHMgKGxvY2F0aW9uLCBjb29yZGluYXRlcywgdGhlX2dlb20sCiAqIHBvaW50LCBnZW9jb2RlZF9jb2x1bW4pIHZpYSBjb2VyY2VMYXRMb24sIHRoZW4gZmFsbHMgYmFjayB0bwogKiBleHBsaWNpdCBsYXRpdHVkZS9sb25naXR1ZGUgc2NhbGFyIGZpZWxkcy4KICoKICogQHBhcmFtIHtvYmplY3R9IHJlY29yZCAtIEZsYXR0ZW5lZCBjYW1lcmEgcmVjb3JkLgogKiBAcmV0dXJucyB7e2xhdDpudW1iZXIsIGxvbjpudW1iZXJ9fQogKi8KZXhwb3J0IGZ1bmN0aW9uIGV4dHJhY3RBdXN0aW5Db29yZHMocmVjb3JkKSB7CiAgY29uc3QgY2FuZGlkYXRlcyA9IFsKICAgIHJlY29yZC5sb2NhdGlvbiwKICAgIHJlY29yZC5jb29yZGluYXRlcywKICAgIHJlY29yZC50aGVfZ2VvbSwKICAgIHJlY29yZC5wb2ludCwKICAgIHJlY29yZC5nZW9jb2RlZF9jb2x1bW4sCiAgXTsKICBmb3IgKGNvbnN0IGNhbmRpZGF0ZSBvZiBjYW5kaWRhdGVzKSB7CiAgICBjb25zdCBwYXJzZWQgPSBjb2VyY2VMYXRMb24oY2FuZGlkYXRlKTsKICAgIGlmIChOdW1iZXIuaXNGaW5pdGUocGFyc2VkLmxhdCkgJiYgTnVtYmVyLmlzRmluaXRlKHBhcnNlZC5sb24pKQogICAgICByZXR1cm4gcGFyc2VkOwogIH0KCiAgY29uc3QgbGF0ID0gdG9GaW5pdGVOdW1iZXIoCiAgICByZWNvcmQubGF0aXR1ZGUgPz8KICAgICAgcmVjb3JkLmxhdCA/PwogICAgICByZWNvcmQuY2FtZXJhX2xhdGl0dWRlID8/CiAgICAgIHJlY29yZC5sb2NhdGlvbl9sYXRpdHVkZSwKICAgIE5hTiwKICApOwogIGNvbnN0IGxvbiA9IHRvRmluaXRlTnVtYmVyKAogICAgcmVjb3JkLmxvbmdpdHVkZSA/PwogICAgICByZWNvcmQubG9uID8/CiAgICAgIHJlY29yZC5sbmcgPz8KICAgICAgcmVjb3JkLmNhbWVyYV9sb25naXR1ZGUgPz8KICAgICAgcmVjb3JkLmxvY2F0aW9uX2xvbmdpdHVkZSwKICAgIE5hTiwKICApOwogIHJldHVybiB7IGxhdCwgbG9uIH07Cn0KCi8qKgogKiBFeHRyYWN0IGEgbnVtZXJpYyBjYW1lcmEgSUQgZnJvbSBhbiBBdXN0aW4gT3BlbiBEYXRhIHJlY29yZC4KICoKICogVHJpZXMgd2VsbC1rbm93biBmaWVsZCBuYW1lcyBmaXJzdCwgdGhlbiBzY2FucyBhbnkgZmllbGQgd2hvc2Uga2V5CiAqIGNvbnRhaW5zICJjYW1lcmEiLyJjYW0iLyJkZXZpY2UiICsgImlkIi4KICoKICogQHBhcmFtIHtvYmplY3R9IHJlY29yZCAtIEZsYXR0ZW5lZCBjYW1lcmEgcmVjb3JkLgogKiBAcmV0dXJucyB7c3RyaW5nfSBOdW1lcmljIElEIHN0cmluZywgb3IgJycgaWYgbm9uZSBmb3VuZC4KICovCmV4cG9ydCBmdW5jdGlvbiBleHRyYWN0QXVzdGluQ2FtZXJhSWQocmVjb3JkKSB7CiAgY29uc3QgcHJlZmVycmVkS2V5cyA9IFsKICAgICdjYW1lcmFfaWQnLAogICAgJ2NhbWVyYWlkJywKICAgICdjYW1faWQnLAogICAgJ2RldmljZV9pZCcsCiAgICAnaW50ZXJzZWN0aW9uX2lkJywKICAgICdpZCcsCiAgXTsKICBmb3IgKGNvbnN0IGtleSBvZiBwcmVmZXJyZWRLZXlzKSB7CiAgICBjb25zdCB2YWx1ZSA9IHJlY29yZFtrZXldOwogICAgaWYgKHZhbHVlID09IG51bGwpIGNvbnRpbnVlOwogICAgY29uc3QgYXNUZXh0ID0gU3RyaW5nKHZhbHVlKS50cmltKCk7CiAgICBpZiAoIWFzVGV4dCkgY29udGludWU7CiAgICBpZiAoL15cZCskLy50ZXN0KGFzVGV4dCkpIHJldHVybiBhc1RleHQ7CiAgfQoKICBmb3IgKGNvbnN0IFtrZXksIHZhbHVlXSBvZiBPYmplY3QuZW50cmllcyhyZWNvcmQpKSB7CiAgICBpZiAoIS9jYW1lcmF8Y2FtfGRldmljZS8udGVzdChrZXkpKSBjb250aW51ZTsKICAgIGlmICghL2lkLy50ZXN0KGtleSkpIGNvbnRpbnVlOwogICAgY29uc3QgYXNUZXh0ID0gU3RyaW5nKHZhbHVlIHx8ICcnKS50cmltKCk7CiAgICBpZiAoIWFzVGV4dCkgY29udGludWU7CiAgICBpZiAoL15cZCskLy50ZXN0KGFzVGV4dCkpIHJldHVybiBhc1RleHQ7CiAgfQoKICByZXR1cm4gJyc7Cn0KCi8qKgogKiBFeHRyYWN0IGEgaHVtYW4tcmVhZGFibGUgY2FtZXJhIG5hbWUgZnJvbSBhbiBBdXN0aW4gcmVjb3JkLgogKgogKiBAcGFyYW0ge29iamVjdH0gcmVjb3JkIC0gRmxhdHRlbmVkIGNhbWVyYSByZWNvcmQuCiAqIEBwYXJhbSB7c3RyaW5nfSBjYW1lcmFJZCAtIEZhbGxiYWNrIGlkZW50aWZpZXIgaWYgbm8gbmFtZSBmaWVsZCBmb3VuZC4KICogQHJldHVybnMge3N0cmluZ30KICovCmV4cG9ydCBmdW5jdGlvbiBleHRyYWN0QXVzdGluTmFtZShyZWNvcmQsIGNhbWVyYUlkKSB7CiAgY29uc3QgcHJlZmVycmVkS2V5cyA9IFsKICAgICdjYW1lcmFfbmFtZScsCiAgICAnbG9jYXRpb25fbmFtZScsCiAgICAnaW50ZXJzZWN0aW9uX25hbWUnLAogICAgJ2xvY2F0aW9uJywKICAgICdjcm9zc19zdHJlZXQnLAogICAgJ2Rlc2NyaXB0aW9uJywKICAgICduYW1lJywKICBdOwogIGZvciAoY29uc3Qga2V5IG9mIHByZWZlcnJlZEtleXMpIHsKICAgIGNvbnN0IHZhbHVlID0gcmVjb3JkW2tleV07CiAgICBpZiAodHlwZW9mIHZhbHVlICE9PSAnc3RyaW5nJykgY29udGludWU7CiAgICBjb25zdCB0ZXh0ID0gdmFsdWUudHJpbSgpOwogICAgaWYgKHRleHQpIHJldHVybiB0ZXh0OwogIH0KICByZXR1cm4gYEF1c3RpbiBDYW1lcmEgJHtjYW1lcmFJZH1gOwp9CgovKioKICogRXh0cmFjdCBjYW1lcmEgaGVhZGluZyAoY29tcGFzcyBiZWFyaW5nKSBmcm9tIGFuIEF1c3RpbiByZWNvcmQuCiAqCiAqIFRyaWVzIGV4cGxpY2l0IG51bWVyaWMgaGVhZGluZyBmaWVsZHMgZmlyc3QsIHRoZW4gZGlyZWN0aW9uLWtleXdvcmQKICogZmllbGRzLCB0aGVuIGluZmVycyBmcm9tIHRoZSBjYW1lcmEgbmFtZS9kZXNjcmlwdGlvbiB0ZXh0LgogKgogKiBAcGFyYW0ge29iamVjdH0gcmVjb3JkIC0gRmxhdHRlbmVkIGNhbWVyYSByZWNvcmQuCiAqIEByZXR1cm5zIHtudW1iZXJ9IEhlYWRpbmcgaW4gZGVncmVlcyBbMC4uMzYwKSwgb3IgTmFOIGlmIHVua25vd24uCiAqLwpleHBvcnQgZnVuY3Rpb24gZXh0cmFjdEF1c3RpbkhlYWRpbmcocmVjb3JkKSB7CiAgY29uc3QgZGlyZWN0ID0gdG9GaW5pdGVOdW1iZXIoCiAgICByZWNvcmQuaGVhZGluZ19kZWcgPz8gcmVjb3JkLmhlYWRpbmcgPz8gcmVjb3JkLmJlYXJpbmcsCiAgICBOYU4sCiAgKTsKICBpZiAoTnVtYmVyLmlzRmluaXRlKGRpcmVjdCkpIHJldHVybiAoKGRpcmVjdCAlIDM2MCkgKyAzNjApICUgMzYwOwoKICAvLyBEZWRpY2F0ZWQgZGlyZWN0aW9uIGZpZWxkczogYmFyZSBjYXJkaW5hbCB3b3JkcyAoIldlc3QiKSBhcmUgcmVhbCBmYWNpbmdzLgogIGNvbnN0IGRpcmVjdGlvbktleXMgPSBbCiAgICAnZGlyZWN0aW9uJywKICAgICd0cmF2ZWxfZGlyZWN0aW9uJywKICAgICdmYWNpbmcnLAogICAgJ2ZhY2luZ19kaXJlY3Rpb24nLAogIF07CiAgZm9yIChjb25zdCBrZXkgb2YgZGlyZWN0aW9uS2V5cykgewogICAgY29uc3QgaGVhZGluZyA9IGRpcmVjdGlvblRvSGVhZGluZyhyZWNvcmRba2V5XSwgdHJ1ZSk7CiAgICBpZiAoTnVtYmVyLmlzRmluaXRlKGhlYWRpbmcpKSByZXR1cm4gaGVhZGluZzsKICB9CgogIC8vIEZyZWUtZm9ybSBuYW1lL2ludGVyc2VjdGlvbiB0ZXh0OiBvbmx5IGV4cGxpY2l0IHRyYXZlbCBmb3JtcyAoIldFU1RCT1VORCIvCiAgLy8gIldCIikgY291bnQg4oCUIGEgYmFyZSAiV2VzdCIgaGVyZSBpcyBhIHN0cmVldCBuYW1lICgiNVRIIFNUIC8gV0VTVCBBVkUiKSwgbm90CiAgLy8gYSBmYWNpbmcsIGFuZCBtdXN0IG5vdCBwcm9tb3RlIHRoZSBjYW1lcmEgdG8gYSBmYWxzZSBoaWdoLWNvbmZpZGVuY2UgaGVhZGluZy4KICBjb25zdCBuYW1lUHJvYmUgPSBbCiAgICByZWNvcmQuY2FtZXJhX25hbWUsCiAgICByZWNvcmQubG9jYXRpb25fbmFtZSwKICAgIHJlY29yZC5pbnRlcnNlY3Rpb25fbmFtZSwKICAgIHJlY29yZC5sb2NhdGlvbiwKICAgIHJlY29yZC5jcm9zc19zdHJlZXQsCiAgICByZWNvcmQuZGVzY3JpcHRpb24sCiAgICByZWNvcmQubmFtZSwKICBdCiAgICAuZmlsdGVyKEJvb2xlYW4pCiAgICAuam9pbignICcpOwogIGNvbnN0IGluZmVycmVkID0gZGlyZWN0aW9uVG9IZWFkaW5nKG5hbWVQcm9iZSk7CiAgaWYgKE51bWJlci5pc0Zpbml0ZShpbmZlcnJlZCkpIHJldHVybiBpbmZlcnJlZDsKCiAgcmV0dXJuIE5hTjsKfQoKLyoqCiAqIEJvdW5kaW5nLWJveCBzYW5pdHkgY2hlY2s6IGlzIHRoaXMgY29vcmRpbmF0ZSBwbGF1c2libHkgaW4gdGhlIEF1c3RpbiBtZXRybyBhcmVhPwogKgogKiBAcGFyYW0ge251bWJlcn0gbGF0CiAqIEBwYXJhbSB7bnVtYmVyfSBsb24KICogQHJldHVybnMge2Jvb2xlYW59CiAqLwpleHBvcnQgZnVuY3Rpb24gaXNMaWtlbHlBdXN0aW5Db29yZGluYXRlKGxhdCwgbG9uKSB7CiAgaWYgKCFOdW1iZXIuaXNGaW5pdGUobGF0KSB8fCAhTnVtYmVyLmlzRmluaXRlKGxvbikpIHJldHVybiBmYWxzZTsKICByZXR1cm4gbGF0ID49IDMwLjAyICYmIGxhdCA8PSAzMC41OCAmJiBsb24gPj0gLTk4LjEyICYmIGxvbiA8PSAtOTcuNDsKfQoKLyoqCiAqIEJvdW5kaW5nLWJveCBzYW5pdHkgY2hlY2s6IGlzIHRoaXMgY29vcmRpbmF0ZSBwbGF1c2libHkgb24gdGhlIEZpbm5pc2ggcm9hZAogKiBuZXR3b3JrPyBHZW5lcm91cyBhcm91bmQgdGhlIG9ic2VydmVkIGNhdGFsb2cgZXh0ZW50ICg1OS44Ni4uNzAuMDkgTiwKICogMTkuNjIuLjMxLjI4IEUpIHNvIGEgcmVhbCBuZXcgc3RhdGlvbiBpcyBuZXZlciBkcm9wcGVkLCB0aWdodCBlbm91Z2ggdGhhdCBhCiAqIHN3YXBwZWQgbGF0L2xvbiBvciBhIG51bGwgaXNsYW5kIHJlY29yZCBpcy4KICoKICogQHBhcmFtIHtudW1iZXJ9IGxhdAogKiBAcGFyYW0ge251bWJlcn0gbG9uCiAqIEByZXR1cm5zIHtib29sZWFufQogKi8KLyoqIExvbmdlc3QgdW5zZWxlY3RlZCBjYW1lcmEgbGFiZWwgdGhlIEhVRCBzaG93cyBiZWZvcmUgaXQgZ2V0cyBub2lzeS4gKi8KZXhwb3J0IGNvbnN0IENBTUVSQV9DT0RFX01BWF9DSEFSUyA9IDI4OwoKLyoqCiAqIFNob3J0IGRpc3BsYXkgY29kZSBmb3IgdGhlIHVuc2VsZWN0ZWQgY2FtZXJhIGxhYmVsICgiQ0FNLTxjb2RlPiIpOiB0aGUKICogZmVlZCdzIG93biBuYW1lIGZvciB0aGUgY2FtZXJhICgiNVRIIFNUIC8gQ09OR1JFU1MgQVZFIiwgIlRSQUZBTEdBUgogKiBTUVVBUkUiKSwgdHJpbW1lZCB0byBDQU1FUkFfQ09ERV9NQVhfQ0hBUlMuIEEgcGFjayBtYXkgcGFzcyBhbiBleHBsaWNpdAogKiBgY29kZWAgKFR4RE9UJ3MgZGV2aWNlIGtleSwgTlNXJ3MgdGl0bGUpOyB0aGUgaWQgaXMgdGhlIGxhc3QgcmVzb3J0LgogKgogKiBAcGFyYW0ge3N0cmluZ30gdGV4dAogKiBAcmV0dXJucyB7c3RyaW5nfQogKi8KZXhwb3J0IGZ1bmN0aW9uIGNhbWVyYURpc3BsYXlDb2RlKHRleHQpIHsKICBjb25zdCBjbGVhbiA9IFN0cmluZyh0ZXh0IHx8ICcnKQogICAgLnJlcGxhY2UoL1xzKy9nLCAnICcpCiAgICAudHJpbSgpOwogIGlmIChjbGVhbi5sZW5ndGggPD0gQ0FNRVJBX0NPREVfTUFYX0NIQVJTKSByZXR1cm4gY2xlYW47CiAgcmV0dXJuIGAke2NsZWFuLnNsaWNlKDAsIENBTUVSQV9DT0RFX01BWF9DSEFSUyAtIDEpLnRyaW1FbmQoKX3igKZgOwp9CgovKiogRmluaXRlLCBpbiByYW5nZSwgYW5kIG5vdCB0aGUgbnVsbCBpc2xhbmQgdGhhdCBOdW1iZXIobnVsbCkgcHJvZHVjZXMuICovCmV4cG9ydCBmdW5jdGlvbiBpc1BsYXVzaWJsZUxhdExvbihsYXQsIGxvbikgewogIHJldHVybiAoCiAgICBOdW1iZXIuaXNGaW5pdGUobGF0KSAmJgogICAgTnVtYmVyLmlzRmluaXRlKGxvbikgJiYKICAgIE1hdGguYWJzKGxhdCkgPD0gOTAgJiYKICAgIE1hdGguYWJzKGxvbikgPD0gMTgwICYmCiAgICAhKGxhdCA9PT0gMCAmJiBsb24gPT09IDApCiAgKTsKfQoKLyoqIEJyaXRpc2ggQ29sdW1iaWEgYm91bmRpbmcgYm94ICh3aXRoIHRoZSBuZWlnaGJvdXJpbmcgYm9yZGVyIGNyb3NzaW5ncykuICovCmV4cG9ydCBmdW5jdGlvbiBpc0xpa2VseUJjQ29vcmRpbmF0ZShsYXQsIGxvbikgewogIHJldHVybiAoCiAgICBpc1BsYXVzaWJsZUxhdExvbihsYXQsIGxvbikgJiYKICAgIGxhdCA+PSA0OCAmJgogICAgbGF0IDw9IDYwLjUgJiYKICAgIGxvbiA+PSAtMTM5LjUgJiYKICAgIGxvbiA8PSAtMTE0CiAgKTsKfQoKLyoqIFRleGFzIGJvdW5kaW5nIGJveC4gKi8KZXhwb3J0IGZ1bmN0aW9uIGlzTGlrZWx5VGV4YXNDb29yZGluYXRlKGxhdCwgbG9uKSB7CiAgcmV0dXJuICgKICAgIGlzUGxhdXNpYmxlTGF0TG9uKGxhdCwgbG9uKSAmJgogICAgbGF0ID49IDI1LjUgJiYKICAgIGxhdCA8PSAzNi43ICYmCiAgICBsb24gPj0gLTEwNyAmJgogICAgbG9uIDw9IC05My40CiAgKTsKfQoKLyoqIE5ldyBTb3V0aCBXYWxlcyBib3VuZGluZyBib3ggKGluY2wuIHRoZSBBQ1QgYW5kIExvcmQgSG93ZSBJc2xhbmQpLiAqLwpleHBvcnQgZnVuY3Rpb24gaXNMaWtlbHlOc3dDb29yZGluYXRlKGxhdCwgbG9uKSB7CiAgcmV0dXJuICgKICAgIGlzUGxhdXNpYmxlTGF0TG9uKGxhdCwgbG9uKSAmJgogICAgbGF0ID49IC0zOCAmJgogICAgbGF0IDw9IC0yOCAmJgogICAgbG9uID49IDE0MC45ICYmCiAgICBsb24gPD0gMTU5LjIKICApOwp9CgovKiogQ2FsZ2FyeSdzIG11bmljaXBhbCBleHRlbnQsIHdpdGggc2xhY2sgZm9yIHRoZSByaW5nIHJvYWQuICovCmV4cG9ydCBmdW5jdGlvbiBpc0xpa2VseUNhbGdhcnlDb29yZGluYXRlKGxhdCwgbG9uKSB7CiAgcmV0dXJuICgKICAgIGlzUGxhdXNpYmxlTGF0TG9uKGxhdCwgbG9uKSAmJgogICAgbGF0ID49IDUwLjggJiYKICAgIGxhdCA8PSA1MS4yNSAmJgogICAgbG9uID49IC0xMTQuNCAmJgogICAgbG9uIDw9IC0xMTMuOAogICk7Cn0KCmV4cG9ydCBmdW5jdGlvbiBpc0xpa2VseUZpbmxhbmRDb29yZGluYXRlKGxhdCwgbG9uKSB7CiAgaWYgKCFOdW1iZXIuaXNGaW5pdGUobGF0KSB8fCAhTnVtYmVyLmlzRmluaXRlKGxvbikpIHJldHVybiBmYWxzZTsKICByZXR1cm4gbGF0ID49IDU5LjUgJiYgbGF0IDw9IDcwLjUgJiYgbG9uID49IDE5ICYmIGxvbiA8PSAzMjsKfQoKLyoqCiAqIEh1bWFuIGxhYmVsIGZvciBvbmUgRmludHJhZmZpYyBwcmVzZXQgKGNhbWVyYSB2aWV3KS4KICoKICogU3RhdGlvbiBuYW1lcyBhcmUgbWFjaGluZS1zaGFwZWQgcm9hZCBjb2RlcyAoInZ0M19IeXZpbmvDpMOkX05vcHBvIik7IHRoZQogKiB1bmRlcnNjb3JlcyBiZWNvbWUgc3BhY2VzLiBBIHByZXNldCBpZCBpcyBhbHdheXMgaXRzIHN0YXRpb24gaWQgcGx1cyBhCiAqIHR3by1kaWdpdCB2aWV3IG51bWJlciwgc28gdGhlIHJlbWFpbmRlciBkaXN0aW5ndWlzaGVzIHRoZSBzZXZlcmFsIHZpZXdzIHRoYXQKICogc2hhcmUgb25lIHN0YXRpb24gcG9zaXRpb24uIFRoZSBzdGF0aW9uIGxpc3QgZW5kcG9pbnQgY2FycmllcyBubwogKiBwcmVzZW50YXRpb25OYW1lICgiSGVsc2lua2lpbiIpOyB0aGF0IGxpdmVzIG9ubHkgb24gdGhlIHBlci1zdGF0aW9uIGRldGFpbAogKiBlbmRwb2ludCwgd2hpY2ggd291bGQgY29zdCBvbmUgcmVxdWVzdCBwZXIgc3RhdGlvbi4KICoKICogQHBhcmFtIHtzdHJpbmd9IHN0YXRpb25OYW1lIC0gUmF3IGBwcm9wZXJ0aWVzLm5hbWVgLgogKiBAcGFyYW0ge3N0cmluZ30gc3RhdGlvbklkIC0gUmF3IGBwcm9wZXJ0aWVzLmlkYCAoZS5nLiAiQzAxNTAzIikuCiAqIEBwYXJhbSB7c3RyaW5nfSBwcmVzZXRJZCAtIFJhdyBwcmVzZXQgaWQgKGUuZy4gIkMwMTUwMzAxIikuCiAqIEByZXR1cm5zIHtzdHJpbmd9CiAqLwpleHBvcnQgZnVuY3Rpb24gZmludHJhZmZpY0NhbWVyYU5hbWUoc3RhdGlvbk5hbWUsIHN0YXRpb25JZCwgcHJlc2V0SWQpIHsKICBjb25zdCBiYXNlID0KICAgIFN0cmluZyhzdGF0aW9uTmFtZSB8fCAnJykKICAgICAgLnJlcGxhY2UoL18vZywgJyAnKQogICAgICAudHJpbSgpIHx8IGBGaW50cmFmZmljICR7c3RhdGlvbklkfWA7CiAgY29uc3QgdmlldyA9IFN0cmluZyhwcmVzZXRJZCB8fCAnJykuc2xpY2UoU3RyaW5nKHN0YXRpb25JZCB8fCAnJykubGVuZ3RoKTsKICByZXR1cm4gdmlldyA/IGAke2Jhc2V9ICh2aWV3ICR7dmlld30pYCA6IGJhc2U7Cn0KCi8qKgogKiBEZXJpdmUgYSBkZXRlcm1pbmlzdGljIGZhbGxiYWNrIGhlYWRpbmcgZnJvbSBhIGNhbWVyYSBJRCBoYXNoLgogKgogKiBQcm9kdWNlcyBvbmUgb2YgMTYgZXZlbmx5LXNwYWNlZCBjb21wYXNzIGRpcmVjdGlvbnMgKDAsIDIyLjUsIDQ1LCAuLi4pLgogKgogKiBAcGFyYW0ge3N0cmluZ30gY2FtZXJhSWQKICogQHJldHVybnMge251bWJlcn0gSGVhZGluZyBpbiBkZWdyZWVzIFswLi4zNjApLgogKi8KZXhwb3J0IGZ1bmN0aW9uIGZhbGxiYWNrSGVhZGluZ0Zyb21JZChjYW1lcmFJZCkgewogIHJldHVybiAoaGFzaFNlZWQoU3RyaW5nKGNhbWVyYUlkKSkgJSAxNikgKiAyMi41Owp9CgovKioKICogQ29udmVydCBhIFNvY3JhdGEgcm93cy5qc29uIGFycmF5IHJvdyBpbnRvIGEga2V5ZWQgb2JqZWN0IHVzaW5nIGNvbHVtbiBtZXRhZGF0YS4KICoKICogQHBhcmFtIHtBcnJheX0gcm93IC0gQXJyYXkgb2YgY2VsbCB2YWx1ZXMgZnJvbSB0aGUgU29jcmF0YSBwYXlsb2FkLgogKiBAcGFyYW0ge0FycmF5PHtmaWVsZE5hbWU/OnN0cmluZywgbmFtZT86c3RyaW5nfT59IGNvbHVtbnMgLSBDb2x1bW4gZGVzY3JpcHRvcnMuCiAqIEByZXR1cm5zIHtvYmplY3R9IEtleWVkIHJlY29yZCB3aXRoIG5vcm1hbGl6ZWQgc25ha2VfY2FzZSBrZXlzLgogKi8KZXhwb3J0IGZ1bmN0aW9uIHJvd0FycmF5VG9PYmplY3Qocm93LCBjb2x1bW5zKSB7CiAgY29uc3QgcmVjb3JkID0ge307CiAgZm9yIChsZXQgaWR4ID0gMDsgaWR4IDwgY29sdW1ucy5sZW5ndGg7IGlkeCsrKSB7CiAgICBjb25zdCBjb2wgPSBjb2x1bW5zW2lkeF07CiAgICBjb25zdCBrZXkgPSBub3JtYWxpemVLZXkoY29sLmZpZWxkTmFtZSB8fCBjb2wubmFtZSB8fCBgY29sXyR7aWR4fWApOwogICAgaWYgKCFrZXkpIGNvbnRpbnVlOwogICAgcmVjb3JkW2tleV0gPSByb3dbaWR4XTsKICB9CiAgcmV0dXJuIHJlY29yZDsKfQoKLyoqCiAqIERpc3RhbmNlLXByaW9yaXRpemVzIGNhbWVyYXMgdG8gYSBjYXA6IGtlZXBzIHRoZSBtYXhDb3VudCBjYW1lcmFzIGNsb3Nlc3QKICogdG8gQU5ZIG9mIHRoZSBnaXZlbiBhbmNob3IgcG9pbnRzIChtaW4gZGlzdGFuY2Ugb3ZlciBhbmNob3JzKSwgdGllLWJyb2tlbgogKiBieSBvcmlnaW5hbCBhcnJheSBvcmRlci4gVXNlZCBieSBldmVyeSBsaXZlIHNvdXJjZSBwYWNrIChBdXN0aW46IG9uZQogKiBkb3dudG93biBhbmNob3I7IENhbHRyYW5zOiBvbmUgYW5jaG9yIHBlciBtYWpvciBDQSBtZXRybzsgVGZMOiBjZW50cmFsCiAqIExvbmRvbikgc28gYSBjYXAgYWx3YXlzIGtlZXBzIHRoZSBkZW5zZXN0LCBtb3N0IGludGVyZXN0aW5nIGNvcmVzLgogKgogKiBAcGFyYW0ge0FycmF5PG9iamVjdD59IGNhbWVyYXMgLSBOb3JtYWxpemVkIGNhbWVyYSBzb3VyY2Ugb2JqZWN0cy4KICogQHBhcmFtIHtudW1iZXJ9IG1heENvdW50IC0gQ2FwICg8PTAgb3IgPj0gbGVuZ3RoIGRpc2FibGVzKS4KICogQHBhcmFtIHtBcnJheTx7bGF0Om51bWJlcixsb246bnVtYmVyfT59IGFuY2hvcnMgLSBBdCBsZWFzdCBvbmUgYW5jaG9yLgogKiBAcmV0dXJucyB7QXJyYXk8b2JqZWN0Pn0gQ2FwcGVkLCBwcmlvcml0eS1vcmRlcmVkIGNhbWVyYSBsaXN0LgogKi8KZXhwb3J0IGZ1bmN0aW9uIHByaW9yaXRpemVTb3VyY2VzKGNhbWVyYXMsIG1heENvdW50LCBhbmNob3JzKSB7CiAgY29uc3QgbGlzdCA9IEFycmF5LmlzQXJyYXkoY2FtZXJhcykgPyBjYW1lcmFzIDogW107CiAgY29uc3QgYW5jaG9yTGlzdCA9IChBcnJheS5pc0FycmF5KGFuY2hvcnMpID8gYW5jaG9ycyA6IFtdKS5maWx0ZXIoCiAgICAoYSkgPT4gTnVtYmVyLmlzRmluaXRlKGE/LmxhdCkgJiYgTnVtYmVyLmlzRmluaXRlKGE/LmxvbiksCiAgKTsKICBpZiAoIWFuY2hvckxpc3QubGVuZ3RoKSByZXR1cm4gbGlzdDsKICAvLyBBbHdheXMgc29ydCB3aGVuIGFuY2hvcnMgZXhpc3QsIGV2ZW4gd2hlbiB0aGUgcGFjayBmaXRzIGl0cyBvd24gY2FwOiB0aGUKICAvLyBjYXRhbG9nLXdpZGUgY2FwIChjYXAuanMpIHRoaW5zIGEgcGFjayBmcm9tIHRoZSBFTkQgb2YgdGhpcyBvcmRlciwgc28KICAvLyAibmVhcmVzdCB0byBhbiBhbmNob3IgZmlyc3QiIGhhcyB0byBob2xkIHdoZXRoZXIgb3Igbm90IHRoZSBwYWNrIHdhcwogIC8vIHRyaW1tZWQgaGVyZS4KICBjb25zdCBjYXAgPQogICAgTnVtYmVyLmlzRmluaXRlKG1heENvdW50KSAmJiBtYXhDb3VudCA+IDAKICAgICAgPyBNYXRoLm1pbihtYXhDb3VudCwgbGlzdC5sZW5ndGgpCiAgICAgIDogbGlzdC5sZW5ndGg7CgogIGNvbnN0IHNjb3JlZCA9IGxpc3QubWFwKChjYW1lcmEsIGlkeCkgPT4gewogICAgY29uc3QgbGF0ID0gTnVtYmVyKGNhbWVyYT8ubGF0KTsKICAgIGNvbnN0IGxvbiA9IE51bWJlcihjYW1lcmE/Lmxvbik7CiAgICBjb25zdCBkaXN0S20gPQogICAgICBOdW1iZXIuaXNGaW5pdGUobGF0KSAmJiBOdW1iZXIuaXNGaW5pdGUobG9uKQogICAgICAgID8gTWF0aC5taW4oCiAgICAgICAgICAgIC4uLmFuY2hvckxpc3QubWFwKChhKSA9PiBoYXZlcnNpbmVLbShsYXQsIGxvbiwgYS5sYXQsIGEubG9uKSksCiAgICAgICAgICApCiAgICAgICAgOiBOdW1iZXIuUE9TSVRJVkVfSU5GSU5JVFk7CiAgICByZXR1cm4geyBjYW1lcmEsIGlkeCwgZGlzdEttIH07CiAgfSk7CgogIHNjb3JlZC5zb3J0KChhLCBiKSA9PiB7CiAgICBpZiAoYS5kaXN0S20gIT09IGIuZGlzdEttKSByZXR1cm4gYS5kaXN0S20gLSBiLmRpc3RLbTsKICAgIHJldHVybiBhLmlkeCAtIGIuaWR4OwogIH0pOwoKICByZXR1cm4gc2NvcmVkLnNsaWNlKDAsIGNhcCkubWFwKChlbnRyeSkgPT4gZW50cnkuY2FtZXJhKTsKfQoKLyoqCiAqIE5vcm1hbGl6ZSBhIHJhdyBDQ1RWIHNvdXJjZSBpdGVtIGludG8gYSBjYW5vbmljYWwgc2hhcGUgd2l0aCBzYWZlIGRlZmF1bHRzLgogKgogKiBAcGFyYW0ge29iamVjdH0gaXRlbSAtIFJhdyBzb3VyY2UgZnJvbSBmaWxlLCBlbnYsIG9yIEF1c3RpbiBPcGVuIERhdGEuCiAqIEByZXR1cm5zIHtvYmplY3R9IE5vcm1hbGl6ZWQgc291cmNlIHdpdGggYWxsIGV4cGVjdGVkIGZpZWxkcyBwb3B1bGF0ZWQuCiAqLwpleHBvcnQgZnVuY3Rpb24gbm9ybWFsaXplU291cmNlSXRlbShpdGVtKSB7CiAgcmV0dXJuIHsKICAgIGlkOiBTdHJpbmcoaXRlbS5pZCB8fCAnJykudHJpbSgpLAogICAgbmFtZTogU3RyaW5nKGl0ZW0ubmFtZSB8fCBpdGVtLmlkIHx8ICcnKS50cmltKCksCiAgICBjaXR5OiBTdHJpbmcoaXRlbS5jaXR5IHx8ICcnKSwKICAgIGNpdHlJZDogU3RyaW5nKGl0ZW0uY2l0eUlkIHx8ICcnKSwKICAgIHByb3ZpZGVyOiBTdHJpbmcoaXRlbS5wcm92aWRlciB8fCAnQ29uZmlndXJlZCBDQ1RWIFNvdXJjZScpLAogICAgbGF0OiB0b0Zpbml0ZU51bWJlcihpdGVtLmxhdCksCiAgICBsb246IHRvRmluaXRlTnVtYmVyKGl0ZW0ubG9uKSwKICAgIGhlYWRpbmdEZWc6IHRvRmluaXRlTnVtYmVyKGl0ZW0uaGVhZGluZ0RlZyksCiAgICBoZWFkaW5nQ29uZmlkZW5jZTogU3RyaW5nKAogICAgICBpdGVtLmhlYWRpbmdDb25maWRlbmNlIHx8IGl0ZW0uaGVhZGluZ1NvdXJjZSB8fCAnJywKICAgICkudG9Mb3dlckNhc2UoKSwKICAgIHBpdGNoRGVnOiB0b0Zpbml0ZU51bWJlcihpdGVtLnBpdGNoRGVnKSwKICAgIGZvdkRlZzogdG9GaW5pdGVOdW1iZXIoaXRlbS5mb3ZEZWcpLAogICAgcmFuZ2VNOiB0b0Zpbml0ZU51bWJlcihpdGVtLnJhbmdlTSksCiAgICBtb3VudEhlaWdodE06IHRvRmluaXRlTnVtYmVyKGl0ZW0ubW91bnRIZWlnaHRNKSwKICAgIGdyb3VuZEVsZXZhdGlvbk06IHRvRmluaXRlTnVtYmVyKGl0ZW0uZ3JvdW5kRWxldmF0aW9uTSksCiAgICBmZWVkVHlwZTogbm9ybWFsaXplRmVlZFR5cGUoaXRlbS5mZWVkVHlwZSB8fCBpdGVtLnR5cGUgfHwgJycpLAogICAgdXJsOiB0eXBlb2YgaXRlbS51cmwgPT09ICdzdHJpbmcnID8gaXRlbS51cmwgOiAnJywKICAgIHNuYXBzaG90VXJsOiB0eXBlb2YgaXRlbS5zbmFwc2hvdFVybCA9PT0gJ3N0cmluZycgPyBpdGVtLnNuYXBzaG90VXJsIDogJycsCiAgICBsaWNlbnNlOiBTdHJpbmcoaXRlbS5saWNlbnNlIHx8IGl0ZW0ubGljZW5zZU5vdGUgfHwgJycpLAogICAgLy8gUGVyLWNhbWVyYSBhdHRyaWJ1dGlvbiBmb3IgZmVlZHMgYSBwYXJ0bmVyIHN1cHBsaWVzIGluc2lkZSBhIHBhY2sKICAgIC8vIChEcml2ZUJDOiBUcmFuc0xpbmssIGNpdHkgY2FtZXJhcykuIFNob3duIGJlc2lkZSB0aGUgcHJvdmlkZXIuCiAgICBjcmVkaXQ6IFN0cmluZyhpdGVtLmNyZWRpdCB8fCAnJykudHJpbSgpLAogICAgLy8gVW5zZWxlY3RlZC1sYWJlbCBjb2RlOiB0aGUgcGFjaydzIGV4cGxpY2l0IHNob3J0IG5hbWUsIGVsc2UgdGhlIGZlZWQncwogICAgLy8gbmFtZSwgZWxzZSB0aGUgaWQuCiAgICBjb2RlOiBjYW1lcmFEaXNwbGF5Q29kZSgKICAgICAgaXRlbS5jb2RlIHx8IFN0cmluZyhpdGVtLm5hbWUgfHwgJycpLnRvVXBwZXJDYXNlKCkgfHwgaXRlbS5pZCB8fCAnJywKICAgICksCiAgICBzb3VyY2VLaW5kOiBTdHJpbmcoaXRlbS5zb3VyY2VLaW5kIHx8IGl0ZW0ua2luZCB8fCAnY29uZmlndXJlZCcpLAogICAgLy8gT3B0aW9uYWwgQ0FMIGJhZGdlIGlucHV0IChjY3R2LXYyIGRlc2lnbiDCpzNiL8KnOS4yLCBhZGRpdGl2ZS1vbmx5IHBlciB0aGUKICAgIC8vIGdsb2JhbCBjb25zdHJhaW50cyDigJQgbm90aGluZyBlbHNlIGluIHRoaXMgZmlsZSBjaGFuZ2VzKTogaGFuZC1hdXRob3JlZAogICAgLy8gZmlsZS9lbnYgY2F0YWxvZyBlbnRyaWVzIG1heSBkZWNsYXJlIHBvc2VTb3VyY2U6J2N1cmF0ZWQnIHNvIHRoZSBwYW5lbAogICAgLy8gYmFkZ2UgY2FuIGRpc3Rpbmd1aXNoIHRoZW0gZnJvbSByYXcgYXV0b21hdGVkIHByaW9ycyAoZS5nLiBBdXN0aW4gT3BlbgogICAgLy8gRGF0YSwgd2hpY2ggbmV2ZXIgc2V0cyB0aGlzIGZpZWxkKS4gUGFzc2VkIHRocm91Z2ggYXMtaXMgdG8gdGhlIGNsaWVudC4KICAgIHBvc2VTb3VyY2U6IGl0ZW0ucG9zZVNvdXJjZSA9PT0gJ2N1cmF0ZWQnID8gJ2N1cmF0ZWQnIDogdW5kZWZpbmVkLAogICAgLy8gV2luZHkgbGl2ZS1wbGF5ZXIgZW1iZWQgVVJMIChpZnJhbWUsIG5vdCBITFMpLiBQYXNzZWQgdGhyb3VnaCBzbyB0aGUKICAgIC8vIHBhbmVsIGNhbiBvZmZlciBpdDsgZW1wdHkgZm9yIGV2ZXJ5IG90aGVyIHBhY2suCiAgICBwbGF5ZXJVcmw6IHR5cGVvZiBpdGVtLnBsYXllclVybCA9PT0gJ3N0cmluZycgPyBpdGVtLnBsYXllclVybCA6ICcnLAogIH07Cn0K
+import {
+  normalizeFeedType,
+  isVideoFeedType,
+} from '../../../src/sources/cctvTypes.js';
+export { normalizeFeedType, isVideoFeedType };
+import { directionToHeading } from '../../../src/data/directionText.js';
+import { haversineKm } from '../common/geo.js';
+/**
+ * FNV-1a 32-bit hash of a string, used to derive deterministic pseudo-random
+ * values (e.g. hue for synthetic SVG billboards, fallback heading angles).
+ *
+ * @param {string} text
+ * @returns {number} Unsigned 32-bit hash.
+ */
+export function hashSeed(text) {
+  let h = 2166136261 >>> 0; // FNV offset basis
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 16777619); // FNV prime
+  }
+  return h >>> 0;
+}
+
+/**
+ * Escape special XML/HTML characters for safe embedding in SVG text nodes.
+ *
+ * @param {string} text
+ * @returns {string}
+ */
+export function escapeXml(text) {
+  return String(text || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/**
+ * Coerce a value to a finite number, returning fallback if NaN/Infinity.
+ *
+ * @param {*} value
+ * @param {number} [fallback=NaN]
+ * @returns {number}
+ */
+export function toFiniteNumber(value, fallback = NaN) {
+  const num = Number(value);
+  return Number.isFinite(num) ? num : fallback;
+}
+
+/**
+ * Normalize a column/field name to a lowercase snake_case key.
+ *
+ * @param {string} text
+ * @returns {string}
+ */
+export function normalizeKey(text) {
+  return String(text || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '');
+}
+
+/**
+ * Parse a WKT POINT string (e.g. "POINT(-97.74 30.27)") into lat/lon.
+ *
+ * WKT uses (lon lat) order; returned object uses {lat, lon}.
+ *
+ * @param {string} value
+ * @returns {{lat:number, lon:number}}
+ */
+export function parsePointString(value) {
+  const match = String(value || '').match(
+    /POINT\s*\(\s*(-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)\s*\)/i,
+  );
+  if (!match) return { lat: NaN, lon: NaN };
+  return {
+    lon: toFiniteNumber(match[1]),
+    lat: toFiniteNumber(match[2]),
+  };
+}
+
+/**
+ * Extract lat/lon from a variety of coordinate representations.
+ *
+ * Handles WKT POINT strings, and objects with latitude/lat/y or
+ * longitude/lon/lng/x properties (various casing).
+ *
+ * @param {string|object|null} value
+ * @returns {{lat:number, lon:number}}
+ */
+export function coerceLatLon(value) {
+  if (!value) return { lat: NaN, lon: NaN };
+
+  if (typeof value === 'string') {
+    return parsePointString(value);
+  }
+
+  if (typeof value !== 'object') {
+    return { lat: NaN, lon: NaN };
+  }
+
+  const lat = toFiniteNumber(
+    value.latitude ?? value.lat ?? value.y ?? value.Latitude ?? value.Lat,
+    NaN,
+  );
+  const lon = toFiniteNumber(
+    value.longitude ??
+      value.lon ??
+      value.lng ??
+      value.x ??
+      value.Longitude ??
+      value.Lon,
+    NaN,
+  );
+  return { lat, lon };
+}
+
+/**
+ * Extract geographic coordinates from an Austin Open Data camera record.
+ *
+ * Tries several candidate fields (location, coordinates, the_geom,
+ * point, geocoded_column) via coerceLatLon, then falls back to
+ * explicit latitude/longitude scalar fields.
+ *
+ * @param {object} record - Flattened camera record.
+ * @returns {{lat:number, lon:number}}
+ */
+export function extractAustinCoords(record) {
+  const candidates = [
+    record.location,
+    record.coordinates,
+    record.the_geom,
+    record.point,
+    record.geocoded_column,
+  ];
+  for (const candidate of candidates) {
+    const parsed = coerceLatLon(candidate);
+    if (Number.isFinite(parsed.lat) && Number.isFinite(parsed.lon))
+      return parsed;
+  }
+
+  const lat = toFiniteNumber(
+    record.latitude ??
+      record.lat ??
+      record.camera_latitude ??
+      record.location_latitude,
+    NaN,
+  );
+  const lon = toFiniteNumber(
+    record.longitude ??
+      record.lon ??
+      record.lng ??
+      record.camera_longitude ??
+      record.location_longitude,
+    NaN,
+  );
+  return { lat, lon };
+}
+
+/**
+ * Extract a numeric camera ID from an Austin Open Data record.
+ *
+ * Tries well-known field names first, then scans any field whose key
+ * contains "camera"/"cam"/"device" + "id".
+ *
+ * @param {object} record - Flattened camera record.
+ * @returns {string} Numeric ID string, or '' if none found.
+ */
+export function extractAustinCameraId(record) {
+  const preferredKeys = [
+    'camera_id',
+    'cameraid',
+    'cam_id',
+    'device_id',
+    'intersection_id',
+    'id',
+  ];
+  for (const key of preferredKeys) {
+    const value = record[key];
+    if (value == null) continue;
+    const asText = String(value).trim();
+    if (!asText) continue;
+    if (/^\d+$/.test(asText)) return asText;
+  }
+
+  for (const [key, value] of Object.entries(record)) {
+    if (!/camera|cam|device/.test(key)) continue;
+    if (!/id/.test(key)) continue;
+    const asText = String(value || '').trim();
+    if (!asText) continue;
+    if (/^\d+$/.test(asText)) return asText;
+  }
+
+  return '';
+}
+
+/**
+ * Extract a human-readable camera name from an Austin record.
+ *
+ * @param {object} record - Flattened camera record.
+ * @param {string} cameraId - Fallback identifier if no name field found.
+ * @returns {string}
+ */
+export function extractAustinName(record, cameraId) {
+  const preferredKeys = [
+    'camera_name',
+    'location_name',
+    'intersection_name',
+    'location',
+    'cross_street',
+    'description',
+    'name',
+  ];
+  for (const key of preferredKeys) {
+    const value = record[key];
+    if (typeof value !== 'string') continue;
+    const text = value.trim();
+    if (text) return text;
+  }
+  return `Austin Camera ${cameraId}`;
+}
+
+/**
+ * Extract camera heading (compass bearing) from an Austin record.
+ *
+ * Tries explicit numeric heading fields first, then direction-keyword
+ * fields, then infers from the camera name/description text.
+ *
+ * @param {object} record - Flattened camera record.
+ * @returns {number} Heading in degrees [0..360), or NaN if unknown.
+ */
+export function extractAustinHeading(record) {
+  const direct = toFiniteNumber(
+    record.heading_deg ?? record.heading ?? record.bearing,
+    NaN,
+  );
+  if (Number.isFinite(direct)) return ((direct % 360) + 360) % 360;
+
+  // Dedicated direction fields: bare cardinal words ("West") are real facings.
+  const directionKeys = [
+    'direction',
+    'travel_direction',
+    'facing',
+    'facing_direction',
+  ];
+  for (const key of directionKeys) {
+    const heading = directionToHeading(record[key], true);
+    if (Number.isFinite(heading)) return heading;
+  }
+
+  // Free-form name/intersection text: only explicit travel forms ("WESTBOUND"/
+  // "WB") count — a bare "West" here is a street name ("5TH ST / WEST AVE"), not
+  // a facing, and must not promote the camera to a false high-confidence heading.
+  const nameProbe = [
+    record.camera_name,
+    record.location_name,
+    record.intersection_name,
+    record.location,
+    record.cross_street,
+    record.description,
+    record.name,
+  ]
+    .filter(Boolean)
+    .join(' ');
+  const inferred = directionToHeading(nameProbe);
+  if (Number.isFinite(inferred)) return inferred;
+
+  return NaN;
+}
+
+/**
+ * Bounding-box sanity check: is this coordinate plausibly in the Austin metro area?
+ *
+ * @param {number} lat
+ * @param {number} lon
+ * @returns {boolean}
+ */
+export function isLikelyAustinCoordinate(lat, lon) {
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) return false;
+  return lat >= 30.02 && lat <= 30.58 && lon >= -98.12 && lon <= -97.4;
+}
+
+/**
+ * Bounding-box sanity check: is this coordinate plausibly on the Finnish road
+ * network? Generous around the observed catalog extent (59.86..70.09 N,
+ * 19.62..31.28 E) so a real new station is never dropped, tight enough that a
+ * swapped lat/lon or a null island record is.
+ *
+ * @param {number} lat
+ * @param {number} lon
+ * @returns {boolean}
+ */
+/** Longest unselected camera label the HUD shows before it gets noisy. */
+export const CAMERA_CODE_MAX_CHARS = 28;
+
+/**
+ * Short display code for the unselected camera label ("CAM-<code>"): the
+ * feed's own name for the camera ("5TH ST / CONGRESS AVE", "TRAFALGAR
+ * SQUARE"), trimmed to CAMERA_CODE_MAX_CHARS. A pack may pass an explicit
+ * `code` (TxDOT's device key, NSW's title); the id is the last resort.
+ *
+ * @param {string} text
+ * @returns {string}
+ */
+export function cameraDisplayCode(text) {
+  const clean = String(text || '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (clean.length <= CAMERA_CODE_MAX_CHARS) return clean;
+  return `${clean.slice(0, CAMERA_CODE_MAX_CHARS - 1).trimEnd()}…`;
+}
+
+/** Finite, in range, and not the null island that Number(null) produces. */
+export function isPlausibleLatLon(lat, lon) {
+  return (
+    Number.isFinite(lat) &&
+    Number.isFinite(lon) &&
+    Math.abs(lat) <= 90 &&
+    Math.abs(lon) <= 180 &&
+    !(lat === 0 && lon === 0)
+  );
+}
+
+/** British Columbia bounding box (with the neighbouring border crossings). */
+export function isLikelyBcCoordinate(lat, lon) {
+  return (
+    isPlausibleLatLon(lat, lon) &&
+    lat >= 48 &&
+    lat <= 60.5 &&
+    lon >= -139.5 &&
+    lon <= -114
+  );
+}
+
+/** Texas bounding box. */
+export function isLikelyTexasCoordinate(lat, lon) {
+  return (
+    isPlausibleLatLon(lat, lon) &&
+    lat >= 25.5 &&
+    lat <= 36.7 &&
+    lon >= -107 &&
+    lon <= -93.4
+  );
+}
+
+/** New South Wales bounding box (incl. the ACT and Lord Howe Island). */
+export function isLikelyNswCoordinate(lat, lon) {
+  return (
+    isPlausibleLatLon(lat, lon) &&
+    lat >= -38 &&
+    lat <= -28 &&
+    lon >= 140.9 &&
+    lon <= 159.2
+  );
+}
+
+/** Calgary's municipal extent, with slack for the ring road. */
+export function isLikelyCalgaryCoordinate(lat, lon) {
+  return (
+    isPlausibleLatLon(lat, lon) &&
+    lat >= 50.8 &&
+    lat <= 51.25 &&
+    lon >= -114.4 &&
+    lon <= -113.8
+  );
+}
+
+export function isLikelyFinlandCoordinate(lat, lon) {
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) return false;
+  return lat >= 59.5 && lat <= 70.5 && lon >= 19 && lon <= 32;
+}
+
+/**
+ * Human label for one Fintraffic preset (camera view).
+ *
+ * Station names are machine-shaped road codes ("vt3_Hyvinkää_Noppo"); the
+ * underscores become spaces. A preset id is always its station id plus a
+ * two-digit view number, so the remainder distinguishes the several views that
+ * share one station position. The station list endpoint carries no
+ * presentationName ("Helsinkiin"); that lives only on the per-station detail
+ * endpoint, which would cost one request per station.
+ *
+ * @param {string} stationName - Raw `properties.name`.
+ * @param {string} stationId - Raw `properties.id` (e.g. "C01503").
+ * @param {string} presetId - Raw preset id (e.g. "C0150301").
+ * @returns {string}
+ */
+export function fintrafficCameraName(stationName, stationId, presetId) {
+  const base =
+    String(stationName || '')
+      .replace(/_/g, ' ')
+      .trim() || `Fintraffic ${stationId}`;
+  const view = String(presetId || '').slice(String(stationId || '').length);
+  return view ? `${base} (view ${view})` : base;
+}
+
+/**
+ * Derive a deterministic fallback heading from a camera ID hash.
+ *
+ * Produces one of 16 evenly-spaced compass directions (0, 22.5, 45, ...).
+ *
+ * @param {string} cameraId
+ * @returns {number} Heading in degrees [0..360).
+ */
+export function fallbackHeadingFromId(cameraId) {
+  return (hashSeed(String(cameraId)) % 16) * 22.5;
+}
+
+/**
+ * Convert a Socrata rows.json array row into a keyed object using column metadata.
+ *
+ * @param {Array} row - Array of cell values from the Socrata payload.
+ * @param {Array<{fieldName?:string, name?:string}>} columns - Column descriptors.
+ * @returns {object} Keyed record with normalized snake_case keys.
+ */
+export function rowArrayToObject(row, columns) {
+  const record = {};
+  for (let idx = 0; idx < columns.length; idx++) {
+    const col = columns[idx];
+    const key = normalizeKey(col.fieldName || col.name || `col_${idx}`);
+    if (!key) continue;
+    record[key] = row[idx];
+  }
+  return record;
+}
+
+/**
+ * Distance-prioritizes cameras to a cap: keeps the maxCount cameras closest
+ * to ANY of the given anchor points (min distance over anchors), tie-broken
+ * by original array order. Used by every live source pack (Austin: one
+ * downtown anchor; Caltrans: one anchor per major CA metro; TfL: central
+ * London) so a cap always keeps the densest, most interesting cores.
+ *
+ * @param {Array<object>} cameras - Normalized camera source objects.
+ * @param {number} maxCount - Cap (<=0 or >= length disables).
+ * @param {Array<{lat:number,lon:number}>} anchors - At least one anchor.
+ * @returns {Array<object>} Capped, priority-ordered camera list.
+ */
+export function prioritizeSources(cameras, maxCount, anchors) {
+  const list = Array.isArray(cameras) ? cameras : [];
+  const anchorList = (Array.isArray(anchors) ? anchors : []).filter(
+    (a) => Number.isFinite(a?.lat) && Number.isFinite(a?.lon),
+  );
+  if (!anchorList.length) return list;
+  // Always sort when anchors exist, even when the pack fits its own cap: the
+  // catalog-wide cap (cap.js) thins a pack from the END of this order, so
+  // "nearest to an anchor first" has to hold whether or not the pack was
+  // trimmed here.
+  const cap =
+    Number.isFinite(maxCount) && maxCount > 0
+      ? Math.min(maxCount, list.length)
+      : list.length;
+
+  const scored = list.map((camera, idx) => {
+    const lat = Number(camera?.lat);
+    const lon = Number(camera?.lon);
+    const distKm =
+      Number.isFinite(lat) && Number.isFinite(lon)
+        ? Math.min(
+            ...anchorList.map((a) => haversineKm(lat, lon, a.lat, a.lon)),
+          )
+        : Number.POSITIVE_INFINITY;
+    return { camera, idx, distKm };
+  });
+
+  scored.sort((a, b) => {
+    if (a.distKm !== b.distKm) return a.distKm - b.distKm;
+    return a.idx - b.idx;
+  });
+
+  return scored.slice(0, cap).map((entry) => entry.camera);
+}
+
+/**
+ * Normalize a raw CCTV source item into a canonical shape with safe defaults.
+ *
+ * @param {object} item - Raw source from file, env, or Austin Open Data.
+ * @returns {object} Normalized source with all expected fields populated.
+ */
+export function normalizeSourceItem(item) {
+  return {
+    id: String(item.id || '').trim(),
+    name: String(item.name || item.id || '').trim(),
+    city: String(item.city || ''),
+    cityId: String(item.cityId || ''),
+    provider: String(item.provider || 'Configured CCTV Source'),
+    lat: toFiniteNumber(item.lat),
+    lon: toFiniteNumber(item.lon),
+    headingDeg: toFiniteNumber(item.headingDeg),
+    headingConfidence: String(
+      item.headingConfidence || item.headingSource || '',
+    ).toLowerCase(),
+    pitchDeg: toFiniteNumber(item.pitchDeg),
+    fovDeg: toFiniteNumber(item.fovDeg),
+    rangeM: toFiniteNumber(item.rangeM),
+    mountHeightM: toFiniteNumber(item.mountHeightM),
+    groundElevationM: toFiniteNumber(item.groundElevationM),
+    feedType: normalizeFeedType(item.feedType || item.type || ''),
+    url: typeof item.url === 'string' ? item.url : '',
+    snapshotUrl: typeof item.snapshotUrl === 'string' ? item.snapshotUrl : '',
+    license: String(item.license || item.licenseNote || ''),
+    // Per-camera attribution for feeds a partner supplies inside a pack
+    // (DriveBC: TransLink, city cameras). Shown beside the provider.
+    credit: String(item.credit || '').trim(),
+    // Unselected-label code: the pack's explicit short name, else the feed's
+    // name, else the id.
+    code: cameraDisplayCode(
+      item.code || String(item.name || '').toUpperCase() || item.id || '',
+    ),
+    sourceKind: String(item.sourceKind || item.kind || 'configured'),
+    // Optional CAL badge input (cctv-v2 design §3b/§9.2, additive-only per the
+    // global constraints — nothing else in this file changes): hand-authored
+    // file/env catalog entries may declare poseSource:'curated' so the panel
+    // badge can distinguish them from raw automated priors (e.g. Austin Open
+    // Data, which never sets this field). Passed through as-is to the client.
+    poseSource: item.poseSource === 'curated' ? 'curated' : undefined,
+    // Windy live-player embed URL (iframe, not HLS). Passed through so the
+    // panel can offer it; empty for every other pack.
+    playerUrl: typeof item.playerUrl === 'string' ? item.playerUrl : '',
+  };
+}
